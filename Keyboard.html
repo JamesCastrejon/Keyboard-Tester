@@ -13,9 +13,11 @@
             document.getElementById("key_tab").style.backgroundColor = "Orange";
             document.getElementById("key_tab").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
         }
-        else if(event.keyCode == 13) {//enter
+        else if(event.code == "Enter") {//enter
             document.getElementById("key_enter").style.backgroundColor = "Orange";
             document.getElementById("key_enter").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "NumpadEnter") {//numpad-enter
             document.getElementById("key_enter2").style.backgroundColor = "Orange";
             document.getElementById("key_enter2").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
         }
@@ -429,9 +431,11 @@
             document.getElementById("key_tab").style.backgroundColor = "Gold";
             document.getElementById("key_tab").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
         }
-        else if(event.keyCode == 13) {//enter
+        else if(event.code == "Enter") {//enter
             document.getElementById("key_enter").style.backgroundColor = "Gold";
             document.getElementById("key_enter").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "NumpadEnter") {//numpad-enter
             document.getElementById("key_enter2").style.backgroundColor = "Gold";
             document.getElementById("key_enter2").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
         }
@@ -966,7 +970,7 @@
             <button id="key_home">Home</button>
             <button id="key_pgup">PgUp</button>
             <button class="in-between">-</button>
-            <button id="key_lck"># Lck</button>
+            <button id="key_lck">Num</button>
             <button id="key_division">/</button>
             <button id="key_*">*</button>
             <button id="key_minus">-</button>
