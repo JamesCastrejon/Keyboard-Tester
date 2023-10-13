@@ -1,0 +1,1063 @@
+<script>
+    // TODO: History
+    // TODO: FNLock button on the side
+    // TODO: Mac Toggle: Switches letters to mac keyboard
+    // TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)
+    
+    document.addEventListener('keydown', function(event) {
+        if(event.keyCode == 8) {// backspace
+            document.getElementById("key_back").style.backgroundColor = "Orange";
+            document.getElementById("key_back").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 9) {//tab
+            document.getElementById("key_tab").style.backgroundColor = "Orange";
+            document.getElementById("key_tab").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 13) {//enter
+            document.getElementById("key_enter").style.backgroundColor = "Orange";
+            document.getElementById("key_enter").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+            document.getElementById("key_enter2").style.backgroundColor = "Orange";
+            document.getElementById("key_enter2").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "ShiftLeft") {//shift-left
+            document.getElementById("key_shiftLeft").style.backgroundColor = "Orange";
+            document.getElementById("key_shiftLeft").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "ShiftRight") {//shift-right
+            document.getElementById("key_shiftRight").style.backgroundColor = "Orange";
+            document.getElementById("key_shiftRight").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "ControlLeft") {//ctrl-left
+            document.getElementById("key_controlLeft").style.backgroundColor = "Orange";
+            document.getElementById("key_controlLeft").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "ControlRight") {//ctrl-right
+            document.getElementById("key_controlRight").style.backgroundColor = "Orange";
+            document.getElementById("key_controlRight").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "AltLeft") {//alt
+            document.getElementById("key_altLeft").style.backgroundColor = "Orange";
+            document.getElementById("key_altLeft").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "AltRight") {//alt
+            document.getElementById("key_altRight").style.backgroundColor = "Orange";
+            document.getElementById("key_altRight").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 19) {//pause
+            document.getElementById("key_pause").style.backgroundColor = "Orange";
+            document.getElementById("key_pause").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 20) {//caps
+            document.getElementById("key_caps").style.backgroundColor = "Orange";
+            document.getElementById("key_caps").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 27) {//esc
+            document.getElementById("key_esc").style.backgroundColor = "Orange";
+            document.getElementById("key_esc").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 32) {//space
+            document.getElementById("key_space").style.backgroundColor = "Orange";
+            document.getElementById("key_space").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 33) {//pg up
+            document.getElementById("key_pgup").style.backgroundColor = "Orange";
+            document.getElementById("key_pgup").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 34) {//pg dn
+            document.getElementById("key_pgdn").style.backgroundColor = "Orange";
+            document.getElementById("key_pgdn").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 35) {//end
+            document.getElementById("key_end").style.backgroundColor = "Orange";
+            document.getElementById("key_end").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 36) {//home
+            document.getElementById("key_home").style.backgroundColor = "Orange";
+            document.getElementById("key_home").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 37) {//left
+            document.getElementById("key_left").style.backgroundColor = "Orange";
+            document.getElementById("key_left").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 38) {//up
+            document.getElementById("key_up").style.backgroundColor = "Orange";
+            document.getElementById("key_up").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 39) {//right
+            document.getElementById("key_right").style.backgroundColor = "Orange";
+            document.getElementById("key_right").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 40) {//down
+            document.getElementById("key_down").style.backgroundColor = "Orange";
+            document.getElementById("key_down").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 44) {//print
+            document.getElementById("key_print").style.backgroundColor = "Orange";
+            document.getElementById("key_print").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 45) {//insert
+            document.getElementById("key_insert").style.backgroundColor = "Orange";
+            document.getElementById("key_insert").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 46) {//delete
+            document.getElementById("key_delete").style.backgroundColor = "Orange";
+            document.getElementById("key_delete").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 48) {//0
+            document.getElementById("key_0").style.backgroundColor = "Orange";
+            document.getElementById("key_0").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 49) {//1
+            document.getElementById("key_1").style.backgroundColor = "Orange";
+            document.getElementById("key_1").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 50) {//2
+            document.getElementById("key_2").style.backgroundColor = "Orange";
+            document.getElementById("key_2").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 51) {//3
+            document.getElementById("key_3").style.backgroundColor = "Orange";
+            document.getElementById("key_3").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 52) {//4
+            document.getElementById("key_4").style.backgroundColor = "Orange";
+            document.getElementById("key_4").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 53) {//5
+            document.getElementById("key_5").style.backgroundColor = "Orange";
+            document.getElementById("key_5").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 54) {//6
+            document.getElementById("key_6").style.backgroundColor = "Orange";
+            document.getElementById("key_6").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 55) {//7
+            document.getElementById("key_7").style.backgroundColor = "Orange";
+            document.getElementById("key_7").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 56) {//8
+            document.getElementById("key_8").style.backgroundColor = "Orange";
+            document.getElementById("key_8").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 57) {//9
+            document.getElementById("key_9").style.backgroundColor = "Orange";
+            document.getElementById("key_9").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 65) {//a
+            document.getElementById("key_a").style.backgroundColor = "Orange";
+            document.getElementById("key_a").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 66) {//b
+            document.getElementById("key_b").style.backgroundColor = "Orange";
+            document.getElementById("key_b").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 67) {//c
+            document.getElementById("key_c").style.backgroundColor = "Orange";
+            document.getElementById("key_c").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 68) {//d
+            document.getElementById("key_d").style.backgroundColor = "Orange";
+            document.getElementById("key_d").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 69) {//e
+            document.getElementById("key_e").style.backgroundColor = "Orange";
+            document.getElementById("key_e").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 70) {//f
+            document.getElementById("key_f").style.backgroundColor = "Orange";
+            document.getElementById("key_f").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 71) {//g
+            document.getElementById("key_g").style.backgroundColor = "Orange";
+            document.getElementById("key_g").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 72) {//h
+            document.getElementById("key_h").style.backgroundColor = "Orange";
+            document.getElementById("key_h").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 73) {//i
+            document.getElementById("key_i").style.backgroundColor = "Orange";
+            document.getElementById("key_i").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 74) {//j
+            document.getElementById("key_j").style.backgroundColor = "Orange";
+            document.getElementById("key_j").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 75) {//k
+            document.getElementById("key_k").style.backgroundColor = "Orange";
+            document.getElementById("key_k").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 76) {//l
+            document.getElementById("key_l").style.backgroundColor = "Orange";
+            document.getElementById("key_l").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 77) {//m
+            document.getElementById("key_m").style.backgroundColor = "Orange";
+            document.getElementById("key_m").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 78) {//n
+            document.getElementById("key_n").style.backgroundColor = "Orange";
+            document.getElementById("key_n").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 79) {//o
+            document.getElementById("key_o").style.backgroundColor = "Orange";
+            document.getElementById("key_o").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 80) {//p
+            document.getElementById("key_p").style.backgroundColor = "Orange";
+            document.getElementById("key_p").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 81) {//q
+            document.getElementById("key_q").style.backgroundColor = "Orange";
+            document.getElementById("key_q").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 82) {//r
+            document.getElementById("key_r").style.backgroundColor = "Orange";
+            document.getElementById("key_r").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 83) {//s
+            document.getElementById("key_s").style.backgroundColor = "Orange";
+            document.getElementById("key_s").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 84) {//t
+            document.getElementById("key_t").style.backgroundColor = "Orange";
+            document.getElementById("key_t").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 85) {//u
+            document.getElementById("key_u").style.backgroundColor = "Orange";
+            document.getElementById("key_u").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 86) {//v
+            document.getElementById("key_v").style.backgroundColor = "Orange";
+            document.getElementById("key_v").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 87) {//w
+            document.getElementById("key_w").style.backgroundColor = "Orange";
+            document.getElementById("key_w").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 88) {//x
+            document.getElementById("key_x").style.backgroundColor = "Orange";
+            document.getElementById("key_x").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 89) {//y
+            document.getElementById("key_y").style.backgroundColor = "Orange";
+            document.getElementById("key_y").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 90) {//z
+            document.getElementById("key_z").style.backgroundColor = "Orange";
+            document.getElementById("key_z").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 91) {//window-left
+            document.getElementById("key_winLeft").style.backgroundColor = "Orange";
+            document.getElementById("key_winLeft").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "MetaRight") {//window-right
+            document.getElementById("key_winRight").style.backgroundColor = "Orange";
+            document.getElementById("key_winRight").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.code == "ContextMenu") {//context-menu
+            document.getElementById("key_menu").style.backgroundColor = "Orange";
+            document.getElementById("key_menu").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 96) {//numpad-0
+            document.getElementById("key_#0").style.backgroundColor = "Orange";
+            document.getElementById("key_#0").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 97) {//numpad-1
+            document.getElementById("key_#1").style.backgroundColor = "Orange";
+            document.getElementById("key_#1").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 98) {//numpad-2
+            document.getElementById("key_#2").style.backgroundColor = "Orange";
+            document.getElementById("key_#2").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 99) {//numpad-3
+            document.getElementById("key_#3").style.backgroundColor = "Orange";
+            document.getElementById("key_#3").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 100) {//numpad-4
+            document.getElementById("key_#4").style.backgroundColor = "Orange";
+            document.getElementById("key_#4").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 101) {//numpad-5
+            document.getElementById("key_#5").style.backgroundColor = "Orange";
+            document.getElementById("key_#5").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 102) {//numpad-6
+            document.getElementById("key_#6").style.backgroundColor = "Orange";
+            document.getElementById("key_#6").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 103) {//numpad-7
+            document.getElementById("key_#7").style.backgroundColor = "Orange";
+            document.getElementById("key_#7").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 104) {//numpad-8
+            document.getElementById("key_#8").style.backgroundColor = "Orange";
+            document.getElementById("key_#8").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 105) {//numpad-9
+            document.getElementById("key_#9").style.backgroundColor = "Orange";
+            document.getElementById("key_#9").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 106) {//multiplication
+            document.getElementById("key_*").style.backgroundColor = "Orange";
+            document.getElementById("key_*").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 107) {//addition
+            document.getElementById("key_+").style.backgroundColor = "Orange";
+            document.getElementById("key_+").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 109) {//subtraction
+            document.getElementById("key_minus").style.backgroundColor = "Orange";
+            document.getElementById("key_minus").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 110) {//decimal
+            document.getElementById("key_decimal").style.backgroundColor = "Orange";
+            document.getElementById("key_decimal").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 111) {//division
+            document.getElementById("key_division").style.backgroundColor = "Orange";
+            document.getElementById("key_division").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 112) {//f1
+            document.getElementById("key_f1").style.backgroundColor = "Orange";
+            document.getElementById("key_f1").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 113) {//f2
+            document.getElementById("key_f2").style.backgroundColor = "Orange";
+            document.getElementById("key_f2").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 114) {//f3
+            document.getElementById("key_f3").style.backgroundColor = "Orange";
+            document.getElementById("key_f3").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 115) {//f4
+            document.getElementById("key_f4").style.backgroundColor = "Orange";
+            document.getElementById("key_f4").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 116) {//f5
+            document.getElementById("key_f5").style.backgroundColor = "Orange";
+            document.getElementById("key_f5").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 117) {//f6
+            document.getElementById("key_f6").style.backgroundColor = "Orange";
+            document.getElementById("key_f6").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 118) {//f7
+            document.getElementById("key_f7").style.backgroundColor = "Orange";
+            document.getElementById("key_f7").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 119) {//f8
+            document.getElementById("key_f8").style.backgroundColor = "Orange";
+            document.getElementById("key_f8").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 120) {//f9
+            document.getElementById("key_f9").style.backgroundColor = "Orange";
+            document.getElementById("key_f9").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 121) {//f10
+            document.getElementById("key_f10").style.backgroundColor = "Orange";
+            document.getElementById("key_f10").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 122) {//f11
+            document.getElementById("key_f11").style.backgroundColor = "Orange";
+            document.getElementById("key_f11").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 123) {//f12
+            document.getElementById("key_f12").style.backgroundColor = "Orange";
+            document.getElementById("key_f12").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 12) {//num lock
+            document.getElementById("key_lck").style.backgroundColor = "Orange";
+            document.getElementById("key_lck").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 145) {//scroll lock
+            document.getElementById("key_scroll").style.backgroundColor = "Orange";
+            document.getElementById("key_scroll").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 186) {//;
+            document.getElementById("key_;").style.backgroundColor = "Orange";
+            document.getElementById("key_;").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 187) {//=
+            document.getElementById("key_=").style.backgroundColor = "Orange";
+            document.getElementById("key_=").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 188) {//,
+            document.getElementById("key_,").style.backgroundColor = "Orange";
+            document.getElementById("key_,").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 189) {//-
+            document.getElementById("key_-").style.backgroundColor = "Orange";
+            document.getElementById("key_-").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 190) {//.
+            document.getElementById("key_.").style.backgroundColor = "Orange";
+            document.getElementById("key_.").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 191) {///
+            document.getElementById("key_/").style.backgroundColor = "Orange";
+            document.getElementById("key_/").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 192) {//~
+            document.getElementById("key_~").style.backgroundColor = "Orange";
+            document.getElementById("key_~").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 219) {//[
+            document.getElementById("key_[").style.backgroundColor = "Orange";
+            document.getElementById("key_[").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 220) {//\\
+            document.getElementById("key_\\").style.backgroundColor = "Orange";
+            document.getElementById("key_\\").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 221) {//]
+            document.getElementById("key_]").style.backgroundColor = "Orange";
+            document.getElementById("key_]").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+        else if(event.keyCode == 222) {//'
+            document.getElementById("key_'").style.backgroundColor = "Orange";
+            document.getElementById("key_'").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
+        }
+    });
+    document.addEventListener('keyup', function(event) {
+        if(event.keyCode == 8) {// backspace
+            document.getElementById("key_back").style.backgroundColor = "Gold";
+            document.getElementById("key_back").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 9) {//tab
+            document.getElementById("key_tab").style.backgroundColor = "Gold";
+            document.getElementById("key_tab").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 13) {//enter
+            document.getElementById("key_enter").style.backgroundColor = "Gold";
+            document.getElementById("key_enter").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+            document.getElementById("key_enter2").style.backgroundColor = "Gold";
+            document.getElementById("key_enter2").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "ShiftLeft") {//shift-left
+            document.getElementById("key_shiftLeft").style.backgroundColor = "Gold";
+            document.getElementById("key_shiftLeft").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "ShiftRight") {//shift-right
+            document.getElementById("key_shiftRight").style.backgroundColor = "Gold";
+            document.getElementById("key_shiftRight").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "ControlLeft") {//ctrl-left
+            document.getElementById("key_controlLeft").style.backgroundColor = "Gold";
+            document.getElementById("key_controlLeft").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "ControlRight") {//ctrl-right
+            document.getElementById("key_controlRight").style.backgroundColor = "Gold";
+            document.getElementById("key_controlRight").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "AltLeft") {//alt
+            document.getElementById("key_altLeft").style.backgroundColor = "Gold";
+            document.getElementById("key_altLeft").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "AltRight") {//alt
+            document.getElementById("key_altRight").style.backgroundColor = "Gold";
+            document.getElementById("key_altRight").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 19) {//pause
+            document.getElementById("key_pause").style.backgroundColor = "Gold";
+            document.getElementById("key_pause").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 20) {//caps
+            document.getElementById("key_caps").style.backgroundColor = "Gold";
+            document.getElementById("key_caps").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 27) {//esc
+            document.getElementById("key_esc").style.backgroundColor = "Gold";
+            document.getElementById("key_esc").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 32) {//space
+            document.getElementById("key_space").style.backgroundColor = "Gold";
+            document.getElementById("key_space").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 33) {//pg up
+            document.getElementById("key_pgup").style.backgroundColor = "Gold";
+            document.getElementById("key_pgup").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 34) {//pg dn
+            document.getElementById("key_pgdn").style.backgroundColor = "Gold";
+            document.getElementById("key_pgdn").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 35) {//end
+            document.getElementById("key_end").style.backgroundColor = "Gold";
+            document.getElementById("key_end").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 36) {//home
+            document.getElementById("key_home").style.backgroundColor = "Gold";
+            document.getElementById("key_home").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 37) {//left
+            document.getElementById("key_left").style.backgroundColor = "Gold";
+            document.getElementById("key_left").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 38) {//up
+            document.getElementById("key_up").style.backgroundColor = "Gold";
+            document.getElementById("key_up").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 39) {//right
+            document.getElementById("key_right").style.backgroundColor = "Gold";
+            document.getElementById("key_right").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 40) {//down
+            document.getElementById("key_down").style.backgroundColor = "Gold";
+            document.getElementById("key_down").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 44) {//print
+            document.getElementById("key_print").style.backgroundColor = "Gold";
+            document.getElementById("key_print").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 45) {//insert
+            document.getElementById("key_insert").style.backgroundColor = "Gold";
+            document.getElementById("key_insert").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 46) {//delete
+            document.getElementById("key_delete").style.backgroundColor = "Gold";
+            document.getElementById("key_delete").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 48) {//0
+            document.getElementById("key_0").style.backgroundColor = "Gold";
+            document.getElementById("key_0").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 49) {//1
+            document.getElementById("key_1").style.backgroundColor = "Gold";
+            document.getElementById("key_1").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 50) {//2
+            document.getElementById("key_2").style.backgroundColor = "Gold";
+            document.getElementById("key_2").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 51) {//3
+            document.getElementById("key_3").style.backgroundColor = "Gold";
+            document.getElementById("key_3").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 52) {//4
+            document.getElementById("key_4").style.backgroundColor = "Gold";
+            document.getElementById("key_4").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 53) {//5
+            document.getElementById("key_5").style.backgroundColor = "Gold";
+            document.getElementById("key_5").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 54) {//6
+            document.getElementById("key_6").style.backgroundColor = "Gold";
+            document.getElementById("key_6").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 55) {//7
+            document.getElementById("key_7").style.backgroundColor = "Gold";
+            document.getElementById("key_7").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 56) {//8
+            document.getElementById("key_8").style.backgroundColor = "Gold";
+            document.getElementById("key_8").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 57) {//9
+            document.getElementById("key_9").style.backgroundColor = "Gold";
+            document.getElementById("key_9").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 65) {//a
+            document.getElementById("key_a").style.backgroundColor = "Gold";
+            document.getElementById("key_a").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 66) {//b
+            document.getElementById("key_b").style.backgroundColor = "Gold";
+            document.getElementById("key_b").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 67) {//c
+            document.getElementById("key_c").style.backgroundColor = "Gold";
+            document.getElementById("key_c").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 68) {//d
+            document.getElementById("key_d").style.backgroundColor = "Gold";
+            document.getElementById("key_d").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 69) {//e
+            document.getElementById("key_e").style.backgroundColor = "Gold";
+            document.getElementById("key_e").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 70) {//f
+            document.getElementById("key_f").style.backgroundColor = "Gold";
+            document.getElementById("key_f").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 71) {//g
+            document.getElementById("key_g").style.backgroundColor = "Gold";
+            document.getElementById("key_g").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 72) {//h
+            document.getElementById("key_h").style.backgroundColor = "Gold";
+            document.getElementById("key_h").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 73) {//i
+            document.getElementById("key_i").style.backgroundColor = "Gold";
+            document.getElementById("key_i").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 74) {//j
+            document.getElementById("key_j").style.backgroundColor = "Gold";
+            document.getElementById("key_j").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 75) {//k
+            document.getElementById("key_k").style.backgroundColor = "Gold";
+            document.getElementById("key_k").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 76) {//l
+            document.getElementById("key_l").style.backgroundColor = "Gold";
+            document.getElementById("key_l").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 77) {//m
+            document.getElementById("key_m").style.backgroundColor = "Gold";
+            document.getElementById("key_m").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 78) {//n
+            document.getElementById("key_n").style.backgroundColor = "Gold";
+            document.getElementById("key_n").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 79) {//o
+            document.getElementById("key_o").style.backgroundColor = "Gold";
+            document.getElementById("key_o").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 80) {//p
+            document.getElementById("key_p").style.backgroundColor = "Gold";
+            document.getElementById("key_p").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 81) {//q
+            document.getElementById("key_q").style.backgroundColor = "Gold";
+            document.getElementById("key_q").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 82) {//r
+            document.getElementById("key_r").style.backgroundColor = "Gold";
+            document.getElementById("key_r").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 83) {//s
+            document.getElementById("key_s").style.backgroundColor = "Gold";
+            document.getElementById("key_s").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 84) {//t
+            document.getElementById("key_t").style.backgroundColor = "Gold";
+            document.getElementById("key_t").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 85) {//u
+            document.getElementById("key_u").style.backgroundColor = "Gold";
+            document.getElementById("key_u").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 86) {//v
+            document.getElementById("key_v").style.backgroundColor = "Gold";
+            document.getElementById("key_v").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 87) {//w
+            document.getElementById("key_w").style.backgroundColor = "Gold";
+            document.getElementById("key_w").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 88) {//x
+            document.getElementById("key_x").style.backgroundColor = "Gold";
+            document.getElementById("key_x").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 89) {//y
+            document.getElementById("key_y").style.backgroundColor = "Gold";
+            document.getElementById("key_y").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 90) {//z
+            document.getElementById("key_z").style.backgroundColor = "Gold";
+            document.getElementById("key_z").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 91) {//window-left
+            document.getElementById("key_winLeft").style.backgroundColor = "Gold";
+            document.getElementById("key_winLeft").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "MetaRight") {//window-right
+            document.getElementById("key_winRight").style.backgroundColor = "Gold";
+            document.getElementById("key_winRight").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.code == "ContextMenu") {//context-menu
+            document.getElementById("key_menu").style.backgroundColor = "Gold";
+            document.getElementById("key_menu").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 96) {//numpad-0
+            document.getElementById("key_#0").style.backgroundColor = "Gold";
+            document.getElementById("key_#0").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 97) {//numpad-1
+            document.getElementById("key_#1").style.backgroundColor = "Gold";
+            document.getElementById("key_#1").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 98) {//numpad-2
+            document.getElementById("key_#2").style.backgroundColor = "Gold";
+            document.getElementById("key_#2").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 99) {//numpad-3
+            document.getElementById("key_#3").style.backgroundColor = "Gold";
+            document.getElementById("key_#3").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 100) {//numpad-4
+            document.getElementById("key_#4").style.backgroundColor = "Gold";
+            document.getElementById("key_#4").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 101) {//numpad-5
+            document.getElementById("key_#5").style.backgroundColor = "Gold";
+            document.getElementById("key_#5").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 102) {//numpad-6
+            document.getElementById("key_#6").style.backgroundColor = "Gold";
+            document.getElementById("key_#6").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 103) {//numpad-7
+            document.getElementById("key_#7").style.backgroundColor = "Gold";
+            document.getElementById("key_#7").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 104) {//numpad-8
+            document.getElementById("key_#8").style.backgroundColor = "Gold";
+            document.getElementById("key_#8").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 105) {//numpad-9
+            document.getElementById("key_#9").style.backgroundColor = "Gold";
+            document.getElementById("key_#9").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 106) {//multiplication
+            document.getElementById("key_*").style.backgroundColor = "Gold";
+            document.getElementById("key_*").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 107) {//addition
+            document.getElementById("key_+").style.backgroundColor = "Gold";
+            document.getElementById("key_+").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 109) {//subtraction
+            document.getElementById("key_minus").style.backgroundColor = "Gold";
+            document.getElementById("key_minus").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 110) {//decimal
+            document.getElementById("key_decimal").style.backgroundColor = "Gold";
+            document.getElementById("key_decimal").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 111) {//division
+            document.getElementById("key_division").style.backgroundColor = "Gold";
+            document.getElementById("key_division").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 112) {//f1
+            document.getElementById("key_f1").style.backgroundColor = "Gold";
+            document.getElementById("key_f1").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 113) {//f2
+            document.getElementById("key_f2").style.backgroundColor = "Gold";
+            document.getElementById("key_f2").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 114) {//f3
+            document.getElementById("key_f3").style.backgroundColor = "Gold";
+            document.getElementById("key_f3").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 115) {//f4
+            document.getElementById("key_f4").style.backgroundColor = "Gold";
+            document.getElementById("key_f4").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 116) {//f5
+            document.getElementById("key_f5").style.backgroundColor = "Gold";
+            document.getElementById("key_f5").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 117) {//f6
+            document.getElementById("key_f6").style.backgroundColor = "Gold";
+            document.getElementById("key_f6").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 118) {//f7
+            document.getElementById("key_f7").style.backgroundColor = "Gold";
+            document.getElementById("key_f7").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 119) {//f8
+            document.getElementById("key_f8").style.backgroundColor = "Gold";
+            document.getElementById("key_f8").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 120) {//f9
+            document.getElementById("key_f9").style.backgroundColor = "Gold";
+            document.getElementById("key_f9").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 121) {//f10
+            document.getElementById("key_f10").style.backgroundColor = "Gold";
+            document.getElementById("key_f10").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 122) {//f11
+            document.getElementById("key_f11").style.backgroundColor = "Gold";
+            document.getElementById("key_f11").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 123) {//f12
+            document.getElementById("key_f12").style.backgroundColor = "Gold";
+            document.getElementById("key_f12").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 12) {//num lock
+            document.getElementById("key_lck").style.backgroundColor = "Gold";
+            document.getElementById("key_lck").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 145) {//scroll lock
+            document.getElementById("key_scroll").style.backgroundColor = "Gold";
+            document.getElementById("key_scroll").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 186) {//;
+            document.getElementById("key_;").style.backgroundColor = "Gold";
+            document.getElementById("key_;").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 187) {//=
+            document.getElementById("key_=").style.backgroundColor = "Gold";
+            document.getElementById("key_=").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 188) {//,
+            document.getElementById("key_,").style.backgroundColor = "Gold";
+            document.getElementById("key_,").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 189) {//-
+            document.getElementById("key_-").style.backgroundColor = "Gold";
+            document.getElementById("key_-").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 190) {//.
+            document.getElementById("key_.").style.backgroundColor = "Gold";
+            document.getElementById("key_.").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 191) {///
+            document.getElementById("key_/").style.backgroundColor = "Gold";
+            document.getElementById("key_/").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 192) {//~
+            document.getElementById("key_~").style.backgroundColor = "Gold";
+            document.getElementById("key_~").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 219) {//[
+            document.getElementById("key_[").style.backgroundColor = "Gold";
+            document.getElementById("key_[").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 220) {//\\
+            document.getElementById("key_\\").style.backgroundColor = "Gold";
+            document.getElementById("key_\\").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 221) {//]
+            document.getElementById("key_]").style.backgroundColor = "Gold";
+            document.getElementById("key_]").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+        else if(event.keyCode == 222) {//'
+            document.getElementById("key_'").style.backgroundColor = "Gold";
+            document.getElementById("key_'").style.boxShadow = "2px 2px 10px #474343, -2px -2px 10px #fff";
+        }
+    });
+</script>
+
+<style>
+    body {
+        background-image: linear-gradient(to bottom right,DodgerBlue, Violet);
+    }
+    #keyboard {
+        margin: auto;
+        max-width: 1345px;
+        background-color: #B0BEC5;
+        border-style: ridge;
+        border-radius: 15px;
+        border-color: gray;
+        padding: 10px;
+    }
+    .in-between {
+        width: 10px;
+        height: 10px;
+        visibility: hidden;
+    }
+    .row {
+        width: 100%;
+        height: 60px;
+    }
+    button {
+        color: black;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background: white;
+        box-shadow: 2px 2px 10px #474343, -2px -2px 10px #fff;
+        font-family: roboto, Arial, Helvetica;
+        font-size: 15;
+        margin-left: 5px;
+        outline: none;
+        border-radius: 15%;
+        transition-duration: 0.1s;
+    }
+    .empty-fn {
+        width: 32px;
+        visibility: hidden;
+    }
+    .empty-space {
+        width: 50px;
+        visibility: hidden;
+    }
+    .back {
+        width: 115px;
+        border-radius: 10px;
+    }
+    .tab, .slace {
+        width: 82px;
+        border-radius: 10px;
+    }
+    .caps {
+        width: 95px;
+        border-radius: 10px;
+    }
+    .ent-btn {
+        width: 130px;
+        border-radius: 10px;
+    }
+    .shift {
+        width: 142px;
+        border-radius: 10px;
+    }
+    .space {
+        width: 295px;
+        border-radius: 10px;
+    }
+    .other {
+        width: 75px;
+        border-radius: 10px;
+    }
+    .v-btn {
+        height: 110px;
+        border-radius: 10px;
+        float: right;
+    }
+    .zero {
+        width: 110px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div id="keyboard">
+        <div class="row 1">
+            <button id="key_esc">ESC</button>
+            <button class="empty-fn">-</button>
+            <button id="key_f1">F1</button>
+            <button id="key_f2">F2</button>
+            <button id="key_f3">F3</button>
+            <button id="key_f4">F4</button>
+            <button class="empty-fn">-</button>
+            <button id="key_f5">F5</button>
+            <button id="key_f6">F6</button>
+            <button id="key_f7">F7</button>
+            <button id="key_f8">F8</button>
+            <button class="empty-fn">-</button>
+            <button id="key_f9">F9</button>
+            <button id="key_f10">F10</button>
+            <button id="key_f11">F11</button>
+            <button id="key_f12">F12</button>
+            <button class="in-between">-</button>
+            <button id="key_print">Print</button>
+            <button id="key_scroll">Scroll</button>
+            <button id="key_pause">Pause</button>
+        </div>
+        <div class="in-between"> </div>
+        <div class="row 2">
+            <button id="key_~">~</button>
+            <button id="key_1">1</button>
+            <button id="key_2">2</button>
+            <button id="key_3">3</button>
+            <button id="key_4">4</button>
+            <button id="key_5">5</button>
+            <button id="key_6">6</button>
+            <button id="key_7">7</button>
+            <button id="key_8">8</button>
+            <button id="key_9">9</button>
+            <button id="key_0">0</button>
+            <button id="key_-">-</button>
+            <button id="key_=">=</button>
+            <button id="key_back" class="back">Backspace</button>
+            <button class="in-between">-</button>
+            <button id="key_insert">Insert</button>
+            <button id="key_home">Home</button>
+            <button id="key_pgup">PgUp</button>
+            <button class="in-between">-</button>
+            <button id="key_lck"># Lck</button>
+            <button id="key_division">/</button>
+            <button id="key_*">*</button>
+            <button id="key_minus">-</button>
+        </div>
+        <div class="row 3">
+            <button id="key_tab" class="tab">Tab</button>
+            <button id="key_q">q</button>
+            <button id="key_w">w</button>
+            <button id="key_e">e</button>
+            <button id="key_r">r</button>
+            <button id="key_t">t</button>
+            <button id="key_y">y</button>
+            <button id="key_u">u</button>
+            <button id="key_i">i</button>
+            <button id="key_o">o</button>
+            <button id="key_p">p</button>
+            <button id="key_[">[</button>
+            <button id="key_]">]</button>
+            <button id="key_\" class="slace">\</button>
+            <button class="in-between">-</button>
+            <button id="key_delete">Delete</button>
+            <button id="key_end">End</button>
+            <button id="key_pgdn">PgDn</button>
+            <button class="in-between">-</button>
+            <button id="key_#7">7</button>
+            <button id="key_#8">8</button>
+            <button id="key_#9">9</button>
+            <button id="key_+" class="v-btn">+</button>
+        </div>
+        <div class="row 4">
+            <button id="key_caps" class="caps">Caps</button>
+            <button id="key_a">a</button>
+            <button id="key_s">s</button>
+            <button id="key_d">d</button>
+            <button id="key_f">f</button>
+            <button id="key_g">g</button>
+            <button id="key_h">h</button>
+            <button id="key_j">j</button>
+            <button id="key_k">k</button>
+            <button id="key_l">l</button>
+            <button id="key_;">;</button>
+            <button id="key_'">'</button>
+            <button id="key_enter" class="ent-btn">Enter</button>
+            <button class="in-between">-</button>
+            <button class="empty-space">-</button>
+            <button class="empty-space">-</button>
+            <button class="empty-space">-</button>
+            <button class="in-between">-</button>
+            <button id="key_#4">4</button>
+            <button id="key_#5">5</button>
+            <button id="key_#6">6</button>
+        </div>
+        <div class="row 5">
+            <button id="key_shiftLeft" class="shift">Shift</button>
+            <button id="key_z">z</button>
+            <button id="key_x">x</button>
+            <button id="key_c">c</button>
+            <button id="key_v">v</button>
+            <button id="key_b">b</button>
+            <button id="key_n">n</button>
+            <button id="key_m">m</button>
+            <button id="key_,">,</button>
+            <button id="key_.">.</button>
+            <button id="key_/">/</button>
+            <button id="key_shiftRight" class="shift">Shift</button>
+            <button class="in-between">-</button>
+            <button class="empty-space">-</button>
+            <button id="key_up">Up</button>
+            <button class="empty-space">-</button>
+            <button class="in-between">-</button>
+            <button id="key_#1">1</button>
+            <button id="key_#2">2</button>
+            <button id="key_#3">3</button>
+            <button id="key_enter2" class="v-btn">Enter</button>
+        </div>
+        <div class="row 6">
+            <button id="key_controlLeft" class="other">Ctrl</button>
+            <button id="key_winLeft" class="other">Win</button>
+            <button id="key_altLeft" class="other">Alt</button>
+            <button id="key_space" class="space">Space</button>
+            <button id="key_altRight" class="other">Alt</button>
+            <button id="key_winRight" class="other">Win</button>
+            <button id="key_menu" class="other">Menu</button>
+            <button id="key_controlRight" class="other">Ctrl</button>
+            <button class="in-between">-</button>
+            <button id="key_left">Left</button>
+            <button id="key_down">Down</button>
+            <button id="key_right">Right</button>
+            <button class="in-between">-</button>
+            <button id="key_#0" class="zero">0</button>
+            <button id="key_decimal">.</button>
+        </div>
+    </div>
+</body>
