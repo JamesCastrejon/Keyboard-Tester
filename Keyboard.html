@@ -1,9 +1,8 @@
+<!--TODO: History-->
+<!--TODO: FNLock button on the side-->
+<!--TODO: Mac Toggle: Switches letters to mac keyboard-->
+<!--TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)-->
 <script>
-    // TODO: History
-    // TODO: FNLock button on the side
-    // TODO: Mac Toggle: Switches letters to mac keyboard
-    // TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)
-    
     document.addEventListener('keydown', function(event) {
         if(event.keyCode == 8) {// backspace
             document.getElementById("key_back").style.backgroundColor = "Orange";
@@ -847,221 +846,261 @@
         background-image: linear-gradient(to bottom right,DodgerBlue, Violet);
     }
     #keyboard {
-        margin: auto;
-        max-width: 1343px;
         background-color: #B0BEC5;
-        border-style: ridge;
+        box-shadow: 2px 2px 10px #474343, -2px -2px 10px #fff;
         border-radius: 15px;
         border-color: gray;
         padding: 10px;
+        container-type: inline-size;
+    }
+    .list-inline {
+        margin-top: 5px;
+        height: 50px;
     }
     .in-between {
-        width: 10px;
+        width: 1.32%;
         height: 10px;
         visibility: hidden;
     }
-    .row {
-        width: 100%;
-        height: 60px;
-    }
     button {
         color: black;
-        width: 50px;
         height: 50px;
         border: none;
         background: white;
         box-shadow: 2px 2px 10px #474343, -2px -2px 10px #fff;
-        font-family: roboto, Arial, Helvetica;
-        font-size: 15;
-        margin-left: 5px;
-        outline: none;
-        border-radius: 15%;
         transition-duration: 0.1s;
     }
+    button.one {
+        width: 6%;
+        border-radius: 15%;
+    }
+    button.two {
+        width: 31.59%;
+        border-radius: 15%;
+    }
+    button.three {
+        width: 23.3%;
+        border-radius: 15%;
+    }
     .empty-fn {
-        width: 32px;
+        width: 4.48%;
         visibility: hidden;
     }
     .empty-space {
-        width: 50px;
+        width: 31.59%;
         visibility: hidden;
     }
     .back {
-        width: 115px;
+        width: 14.6%;
         border-radius: 10px;
     }
     .tab, .slace {
-        width: 83px;
+        width: 10.3%;
         border-radius: 10px;
     }
     .caps {
-        width: 95px;
+        width: 12%;
         border-radius: 10px;
     }
     .ent-btn {
-        width: 130px;
+        width: 15.1%;
         border-radius: 10px;
     }
     .shift {
-        width: 142px;
+        width: 16.87%;
         border-radius: 10px;
     }
     .space {
-        width: 295px;
+        width: 38%;
         border-radius: 10px;
     }
     .other {
-        width: 75px;
+        width: 8.28%;
         border-radius: 10px;
     }
     .v-btn {
-        height: 110px;
+        width: 23.3%;
+        height: 105px;
         border-radius: 10px;
         float: right;
+        position: relative;
+        z-index: 10;
     }
     .zero {
-        width: 110px;
+        width: 48.5%;
         border-radius: 10px;
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Keyboard Tester</title>
+        <meta chartset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+</html>
 <body>
-    <div id="keyboard">
-        <div class="row 1">
-            <button id="key_esc">ESC</button>
-            <button class="empty-fn">-</button>
-            <button id="key_f1">F1</button>
-            <button id="key_f2">F2</button>
-            <button id="key_f3">F3</button>
-            <button id="key_f4">F4</button>
-            <button class="empty-fn">-</button>
-            <button id="key_f5">F5</button>
-            <button id="key_f6">F6</button>
-            <button id="key_f7">F7</button>
-            <button id="key_f8">F8</button>
-            <button class="empty-fn">-</button>
-            <button id="key_f9">F9</button>
-            <button id="key_f10">F10</button>
-            <button id="key_f11">F11</button>
-            <button id="key_f12">F12</button>
-            <button class="in-between">-</button>
-            <button id="key_print">Print</button>
-            <button id="key_scroll">Scroll</button>
-            <button id="key_pause">Pause</button>
-        </div>
-        <div class="in-between"> </div>
-        <div class="row 2">
-            <button id="key_~">~</button>
-            <button id="key_1">1</button>
-            <button id="key_2">2</button>
-            <button id="key_3">3</button>
-            <button id="key_4">4</button>
-            <button id="key_5">5</button>
-            <button id="key_6">6</button>
-            <button id="key_7">7</button>
-            <button id="key_8">8</button>
-            <button id="key_9">9</button>
-            <button id="key_0">0</button>
-            <button id="key_-">-</button>
-            <button id="key_=">=</button>
-            <button id="key_back" class="back">Backspace</button>
-            <button class="in-between">-</button>
-            <button id="key_insert">Insert</button>
-            <button id="key_home">Home</button>
-            <button id="key_pgup">PgUp</button>
-            <button class="in-between">-</button>
-            <button id="key_lck">Num</button>
-            <button id="key_division">/</button>
-            <button id="key_*">*</button>
-            <button id="key_minus">-</button>
-        </div>
-        <div class="row 3">
-            <button id="key_tab" class="tab">Tab</button>
-            <button id="key_q">q</button>
-            <button id="key_w">w</button>
-            <button id="key_e">e</button>
-            <button id="key_r">r</button>
-            <button id="key_t">t</button>
-            <button id="key_y">y</button>
-            <button id="key_u">u</button>
-            <button id="key_i">i</button>
-            <button id="key_o">o</button>
-            <button id="key_p">p</button>
-            <button id="key_[">[</button>
-            <button id="key_]">]</button>
-            <button id="key_\" class="slace">\</button>
-            <button class="in-between">-</button>
-            <button id="key_delete">Delete</button>
-            <button id="key_end">End</button>
-            <button id="key_pgdn">PgDn</button>
-            <button class="in-between">-</button>
-            <button id="key_#7">7</button>
-            <button id="key_#8">8</button>
-            <button id="key_#9">9</button>
-            <button id="key_+" class="v-btn">+</button>
-        </div>
-        <div class="row 4">
-            <button id="key_caps" class="caps">Caps</button>
-            <button id="key_a">a</button>
-            <button id="key_s">s</button>
-            <button id="key_d">d</button>
-            <button id="key_f">f</button>
-            <button id="key_g">g</button>
-            <button id="key_h">h</button>
-            <button id="key_j">j</button>
-            <button id="key_k">k</button>
-            <button id="key_l">l</button>
-            <button id="key_;">;</button>
-            <button id="key_'">'</button>
-            <button id="key_enter" class="ent-btn">Enter</button>
-            <button class="in-between">-</button>
-            <button class="empty-space">-</button>
-            <button class="empty-space">-</button>
-            <button class="empty-space">-</button>
-            <button class="in-between">-</button>
-            <button id="key_#4">4</button>
-            <button id="key_#5">5</button>
-            <button id="key_#6">6</button>
-        </div>
-        <div class="row 5">
-            <button id="key_shiftLeft" class="shift">Shift</button>
-            <button id="key_z">z</button>
-            <button id="key_x">x</button>
-            <button id="key_c">c</button>
-            <button id="key_v">v</button>
-            <button id="key_b">b</button>
-            <button id="key_n">n</button>
-            <button id="key_m">m</button>
-            <button id="key_,">,</button>
-            <button id="key_.">.</button>
-            <button id="key_/">/</button>
-            <button id="key_shiftRight" class="shift">Shift</button>
-            <button class="in-between">-</button>
-            <button class="empty-space">-</button>
-            <button id="key_up">Up</button>
-            <button class="empty-space">-</button>
-            <button class="in-between">-</button>
-            <button id="key_#1">1</button>
-            <button id="key_#2">2</button>
-            <button id="key_#3">3</button>
-            <button id="key_enter2" class="v-btn">Enter</button>
-        </div>
-        <div class="row 6">
-            <button id="key_controlLeft" class="other">Ctrl</button>
-            <button id="key_winLeft" class="other">Win</button>
-            <button id="key_altLeft" class="other">Alt</button>
-            <button id="key_space" class="space">Space</button>
-            <button id="key_altRight" class="other">Alt</button>
-            <button id="key_winRight" class="other">Win</button>
-            <button id="key_menu" class="other">Menu</button>
-            <button id="key_controlRight" class="other">Ctrl</button>
-            <button class="in-between">-</button>
-            <button id="key_left">Left</button>
-            <button id="key_down">Down</button>
-            <button id="key_right">Right</button>
-            <button class="in-between">-</button>
-            <button id="key_#0" class="zero">0</button>
-            <button id="key_decimal">.</button>
+    <div class="container">
+        <div id="keyboard">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="list-inline">
+                        <button class="one" id="key_esc">ESC</button>
+                        <button class="empty-fn">-</button>
+                        <button class="one" id="key_f1">F1</button>
+                        <button class="one" id="key_f2">F2</button>
+                        <button class="one" id="key_f3">F3</button>
+                        <button class="one" id="key_f4">F4</button>
+                        <button class="empty-fn">-</button>
+                        <button class="one" id="key_f5">F5</button>
+                        <button class="one" id="key_f6">F6</button>
+                        <button class="one" id="key_f7">F7</button>
+                        <button class="one" id="key_f8">F8</button>
+                        <button class="empty-fn">-</button>
+                        <button class="one" id="key_f9">F9</button>
+                        <button class="one" id="key_f10">F10</button>
+                        <button class="one" id="key_f11">F11</button>
+                        <button class="one" id="key_f12">F12</button>
+                    </div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="one" id="key_~">~</button>
+                        <button class="one" id="key_1">1</button>
+                        <button class="one" id="key_2">2</button>
+                        <button class="one" id="key_3">3</button>
+                        <button class="one" id="key_4">4</button>
+                        <button class="one" id="key_5">5</button>
+                        <button class="one" id="key_6">6</button>
+                        <button class="one" id="key_7">7</button>
+                        <button class="one" id="key_8">8</button>
+                        <button class="one" id="key_9">9</button>
+                        <button class="one" id="key_0">0</button>
+                        <button class="one" id="key_-">-</button>
+                        <button class="one" id="key_=">=</button>
+                        <button id="key_back" class="back">Backspace</button>
+                    </div>
+                    <div class="list-inline">
+                        <button id="key_tab" class="tab">Tab</button>
+                        <button class="one" id="key_q">q</button>
+                        <button class="one" id="key_w">w</button>
+                        <button class="one" id="key_e">e</button>
+                        <button class="one" id="key_r">r</button>
+                        <button class="one" id="key_t">t</button>
+                        <button class="one" id="key_y">y</button>
+                        <button class="one" id="key_u">u</button>
+                        <button class="one" id="key_i">i</button>
+                        <button class="one" id="key_o">o</button>
+                        <button class="one" id="key_p">p</button>
+                        <button class="one" id="key_[">[</button>
+                        <button class="one" id="key_]">]</button>
+                        <button id="key_\" class="slace">\</button>
+                    </div>
+                    <div class="list-inline">
+                        <button id="key_caps" class="caps">Caps</button>
+                        <button class="one" id="key_a">a</button>
+                        <button class="one" id="key_s">s</button>
+                        <button class="one" id="key_d">d</button>
+                        <button class="one" id="key_f">f</button>
+                        <button class="one" id="key_g">g</button>
+                        <button class="one" id="key_h">h</button>
+                        <button class="one" id="key_j">j</button>
+                        <button class="one" id="key_k">k</button>
+                        <button class="one" id="key_l">l</button>
+                        <button class="one" id="key_;">;</button>
+                        <button class="one" id="key_'">'</button>
+                        <button id="key_enter" class="ent-btn">Enter</button>
+                    </div>
+                    <div class="list-inline">
+                        <button id="key_shiftLeft" class="shift">Shift</button>
+                        <button class="one" id="key_z">z</button>
+                        <button class="one" id="key_x">x</button>
+                        <button class="one" id="key_c">c</button>
+                        <button class="one" id="key_v">v</button>
+                        <button class="one" id="key_b">b</button>
+                        <button class="one" id="key_n">n</button>
+                        <button class="one" id="key_m">m</button>
+                        <button class="one" id="key_,">,</button>
+                        <button class="one" id="key_.">.</button>
+                        <button class="one" id="key_/">/</button>
+                        <button id="key_shiftRight" class="shift">Shift</button>
+                    </div>
+                    <div class="list-inline">
+                        <button id="key_controlLeft" class="other">Ctrl</button>
+                        <button id="key_winLeft" class="other">Win</button>
+                        <button id="key_altLeft" class="other">Alt</button>
+                        <button id="key_space" class="space">Space</button>
+                        <button id="key_altRight" class="other">Alt</button>
+                        <button id="key_winRight" class="other">Win</button>
+                        <button id="key_menu" class="other">Menu</button>
+                        <button id="key_controlRight" class="other">Ctrl</button>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="list-inline">
+                        <button class="two" id="key_print">Print</button>
+                        <button class="two" id="key_scroll">Scroll</button>
+                        <button class="two" id="key_pause">Pause</button>
+                    </div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="two" id="key_insert">Insert</button>
+                        <button class="two" id="key_home">Home</button>
+                        <button class="two" id="key_pgup">PgUp</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="two" id="key_delete">Delete</button>
+                        <button class="two" id="key_end">End</button>
+                        <button class="two" id="key_pgdn">PgDn</button>
+                    </div>
+                    <div class="list-inline"></div>
+                    <div class="list-inline">
+                        <button class="empty-space">-</button>
+                        <button class="two" id="key_up">Up</button>
+                        <button class="empty-space">-</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="two" id="key_left">Left</button>
+                        <button class="two" id="key_down">Down</button>
+                        <button class="two" id="key_right">Right</button>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="list-inline"></div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="three" id="key_lck">Num</button>
+                        <button class="three" id="key_division">/</button>
+                        <button class="three" id="key_*">*</button>
+                        <button class="three" id="key_minus">-</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="key_#7">7</button>
+                        <button class="three" id="key_#8">8</button>
+                        <button class="three" id="key_#9">9</button>
+                        <button class="v-btn" id="key_+">+</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="key_#4">4</button>
+                        <button class="three" id="key_#5">5</button>
+                        <button class="three" id="key_#6">6</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="key_#1">1</button>
+                        <button class="three" id="key_#2">2</button>
+                        <button class="three" id="key_#3">3</button>
+                        <button class="v-btn" id="key_enter2">ENT</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="zero" id="key_#0">0</button>
+                        <button class="three" id="key_decimal">.</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
