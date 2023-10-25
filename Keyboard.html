@@ -1,9 +1,11 @@
-<!--TODO: History-->
 <!--TODO: FNLock button on the side-->
 <!--TODO: Mac Toggle: Switches letters to mac keyboard-->
 <!--TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)-->
 <script>
+    const keys = [];
     document.addEventListener('keydown', function(event) {
+        keys.unshift(event.key);
+        document.getElementById("history").innerHTML = keys.toString();
         if(event.keyCode == 8) {// backspace
             document.getElementById("key_back").style.backgroundColor = "Orange";
             document.getElementById("key_back").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
@@ -853,6 +855,14 @@
         padding: 10px;
         container-type: inline-size;
     }
+    #history {
+        min-height: 35px;
+        max-height: 100px;
+        border: none;
+        background: white;
+        padding: 5px;
+        box-shadow: 2px 2px 10px #474343, -2px -2px 10px #fff;
+    }
     .list-inline {
         margin-top: 5px;
         height: 50px;
@@ -947,6 +957,11 @@
 <body>
     <div class="container">
         <div id="keyboard">
+            <div class="row justify-content-center">
+                <div class="col-md-11">
+                    <p class="overflow-auto" id="history"></p>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <div class="list-inline">
