@@ -1,11 +1,18 @@
+<!--TODO: Design history keys-->
 <!--TODO: FNLock button on the side-->
+<!--TODO: Detect Windows or Mac-->
 <!--TODO: Mac Toggle: Switches letters to mac keyboard-->
 <!--TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)-->
 <script>
     const keys = [];
     document.addEventListener('keydown', function(event) {
-        keys.unshift(event.key);
-        document.getElementById("history").innerHTML = keys.toString();
+        let key = event.key;
+        if (key === " ") {
+            key = "Space";
+        }
+        keys.unshift(key);
+        let result = keys.toString();
+        document.getElementById("history").innerHTML = result.replaceAll(",", ", ");
         if(event.keyCode == 8) {// backspace
             document.getElementById("key_back").style.backgroundColor = "Orange";
             document.getElementById("key_back").style.boxShadow = "1px 1px 2px #fff8f8, -1px -1px 2px #474343";
@@ -857,11 +864,12 @@
     }
     #history {
         min-height: 35px;
-        max-height: 100px;
+        max-height: 90px;
         border: none;
         background: white;
         padding: 5px;
         box-shadow: 2px 2px 10px #474343, -2px -2px 10px #fff;
+        overflow-wrap: break-word;
     }
     .list-inline {
         margin-top: 5px;
