@@ -1,0 +1,130 @@
+
+html {
+    font-size: max(0.83vw, 10px);
+    height: 100%;
+}
+body {
+    background-image: linear-gradient(to bottom right,DodgerBlue, Violet);
+}
+#navbar {
+    box-shadow: 0px 0px 10px #474343;
+    height: 64px;
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(10px);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+a h2:hover {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+a:active {
+    text-decoration: underline;
+    color: white;
+}
+.container {
+    min-width: 945px;
+}
+#keyboard {
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px #474343;
+    border-radius: 15px;
+    border-color: gray;
+    padding: 10px;
+    container-type: inline-size;
+}
+#history {
+    min-height: 35px;
+    max-height: 100px;
+    border: none;
+    background: white;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #474343;
+    overflow-wrap: break-word;
+}
+.list-inline {
+    margin-top: 5px;
+    height: 50px;
+}
+.in-between {
+    width: 1.32%;
+    height: 10px;
+    visibility: hidden;
+}
+button {
+    color: black;
+    height: 50px;
+    border: none;
+    background: white;
+    box-shadow: 0px 0px 5px #474343;
+    transition-duration: 0.1s;
+}
+button.one {
+    width: 6%;
+    border-radius: 15%;
+}
+button.two {
+    width: 31.59%;
+    border-radius: 15%;
+}
+button.three {
+    width: 23.3%;
+    border-radius: 15%;
+}
+.empty-fn {
+    width: 4.48%;
+    visibility: hidden;
+}
+.empty-space {
+    width: 31.59%;
+    visibility: hidden;
+}
+.back {
+    width: 14.6%;
+    border-radius: 10px;
+}
+.tab, .slace {
+    width: 10.3%;
+    border-radius: 10px;
+}
+.caps {
+    width: 12%;
+    border-radius: 10px;
+}
+.ent-btn {
+    width: 15.1%;
+    border-radius: 10px;
+}
+.shift {
+    width: 16.87%;
+    border-radius: 10px;
+}
+.space {
+    width: 38%;
+    border-radius: 10px;
+}
+.other {
+    width: 8.28%;
+    border-radius: 10px;
+}
+.v-btn {
+    width: 23.3%;
+    height: 105px;
+    border-radius: 10px;
+    float: right;
+    position: relative;
+    z-index: 10;
+}
+.zero {
+    width: 48.5%;
+    border-radius: 10px;
+}
