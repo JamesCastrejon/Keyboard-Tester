@@ -1,844 +1,935 @@
+var isMac = false;
+function showWindows() {
+    document.getElementById("keyboardWindows").style.display = "";
+    document.getElementById("keyboardMacs").style.display = "none";
+}
+function showMacs() {
+    document.getElementById("keyboardWindows").style.display = "none";
+    document.getElementById("keyboardMacs").style.display = "flex";
+}
+function switchKeyboards(checked) {
+    checked ? showMacs() : showWindows();
+    isMac = checked;
+}
+window.addEventListener("DOMContentLoaded", (event) => {
+    var keyboardSwitch = document.getElementById("keyboardSwitch");
+    keyboardSwitch.addEventListener("change", function() {
+        switchKeyboards(this.checked);
+    });
+});
+
 const keys = [];
-document.addEventListener('keydown', function(event) {
-    let key = event.key;
-    if (key === " ") {
-        key = "Space"
+function addToHistory() {
+    let key = "";
+    switch(event.code) {
+        case "Space": key = "Space"; break;
+        case "MetaLeft": key = isMac ? "Cmd-Left" : "Win-Left"; break;
+        case "MetaRight": key = isMac ? "Cmd-Right" : "Win-Right"; break;
+        case "AltLeft": key = isMac ? "Opt-Left" : "Alt-Left"; break;
+        case "AltRight": key = isMac ? "Opt-Right" : "Alt-Right"; break;
+        case "Equal": key = isMac ? "Equal" : "="; break;
+        case "NumpadEqual": key = isMac ? "Equal-Numpad" : "="; break;
+        default: key = event.key;
     }
     keys.unshift(key);
     let result = keys.toString();
     document.getElementById("history").innerHTML = result.replaceAll(",", ", ");
+}
+
+function changeColors(id, keyDown) {
+    switch(keyDown) {
+        case true:
+            document.getElementById(id).style.backgroundColor = "Gold";
+            document.getElementById(id).style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+            break;
+        case false:
+            document.getElementById(id).style.backgroundColor = "LightGreen";
+            document.getElementById(id).style.boxShadow = "0px 0px 5px #474343";
+            break;
+    }
+}
+document.addEventListener('keydown', function(event) {
+    addToHistory()
     if(event.keyCode == 8) {// backspace
-        document.getElementById("key_back").style.backgroundColor = "Gold";
-        document.getElementById("key_back").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_back", true);
+        changeColors("mackey_back", true);
     }
     else if(event.keyCode == 9) {//tab
-        document.getElementById("key_tab").style.backgroundColor = "Gold";
-        document.getElementById("key_tab").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_tab", true);
+        changeColors("mackey_tab", true);
     }
     else if(event.code == "Enter") {//enter
-        document.getElementById("key_enter").style.backgroundColor = "Gold";
-        document.getElementById("key_enter").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_enter", true);
+        changeColors("mackey_enter", true);
     }
     else if(event.code == "NumpadEnter") {//numpad-enter
-        document.getElementById("key_enter2").style.backgroundColor = "Gold";
-        document.getElementById("key_enter2").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_enter2", true);
+        changeColors("mackey_enter2", true);
     }
     else if(event.code == "ShiftLeft") {//shift-left
-        document.getElementById("key_shiftLeft").style.backgroundColor = "Gold";
-        document.getElementById("key_shiftLeft").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_shiftLeft", true);
+        changeColors("mackey_shiftLeft", true);
     }
     else if(event.code == "ShiftRight") {//shift-right
-        document.getElementById("key_shiftRight").style.backgroundColor = "Gold";
-        document.getElementById("key_shiftRight").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_shiftRight", true);
+        changeColors("mackey_shiftRight", true);
     }
     else if(event.code == "ControlLeft") {//ctrl-left
-        document.getElementById("key_controlLeft").style.backgroundColor = "Gold";
-        document.getElementById("key_controlLeft").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_controlLeft", true);
+        changeColors("mackey_controlLeft", true);
     }
     else if(event.code == "ControlRight") {//ctrl-right
-        document.getElementById("key_controlRight").style.backgroundColor = "Gold";
-        document.getElementById("key_controlRight").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_controlRight", true);
+        changeColors("mackey_controlRight", true);
     }
     else if(event.code == "AltLeft") {//alt
-        document.getElementById("key_altLeft").style.backgroundColor = "Gold";
-        document.getElementById("key_altLeft").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_altLeft", true);
+        changeColors("mackey_altLeft", true);
     }
     else if(event.code == "AltRight") {//alt
-        document.getElementById("key_altRight").style.backgroundColor = "Gold";
-        document.getElementById("key_altRight").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_altRight", true);
+        changeColors("mackey_altRight", true);
     }
     else if(event.keyCode == 19) {//pause
-        document.getElementById("key_pause").style.backgroundColor = "Gold";
-        document.getElementById("key_pause").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_pause", true);
+        changeColors("mackey_pause", true);
     }
     else if(event.keyCode == 20) {//caps
-        document.getElementById("key_caps").style.backgroundColor = "Orange";
-        document.getElementById("key_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_caps", true);
+        changeColors("mackey_caps", true);
     }
     else if(event.keyCode == 27) {//esc
-        document.getElementById("key_esc").style.backgroundColor = "Gold";
-        document.getElementById("key_esc").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_esc", true);
+        changeColors("mackey_esc", true);
     }
     else if(event.keyCode == 32) {//space
-        document.getElementById("key_space").style.backgroundColor = "Gold";
-        document.getElementById("key_space").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_space", true);
+        changeColors("mackey_space", true);
     }
     else if(event.keyCode == 33) {//pg up
-        document.getElementById("key_pgup").style.backgroundColor = "Gold";
-        document.getElementById("key_pgup").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_pgup", true);
+        changeColors("mackey_pgup", true);
     }
     else if(event.keyCode == 34) {//pg dn
-        document.getElementById("key_pgdn").style.backgroundColor = "Gold";
-        document.getElementById("key_pgdn").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_pgdn", true);
+        changeColors("mackey_pgdn", true);
     }
     else if(event.keyCode == 35) {//end
-        document.getElementById("key_end").style.backgroundColor = "Gold";
-        document.getElementById("key_end").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_end", true);
+        changeColors("mackey_end", true);
     }
     else if(event.keyCode == 36) {//home
-        document.getElementById("key_home").style.backgroundColor = "Gold";
-        document.getElementById("key_home").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_home", true);
+        changeColors("mackey_home", true);
     }
     else if(event.keyCode == 37) {//left
-        document.getElementById("key_left").style.backgroundColor = "Gold";
-        document.getElementById("key_left").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_left", true);
+        changeColors("mackey_left", true);
     }
     else if(event.keyCode == 38) {//up
-        document.getElementById("key_up").style.backgroundColor = "Gold";
-        document.getElementById("key_up").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_up", true);
+        changeColors("mackey_up", true);
     }
     else if(event.keyCode == 39) {//right
-        document.getElementById("key_right").style.backgroundColor = "Gold";
-        document.getElementById("key_right").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_right", true);
+        changeColors("mackey_right", true);
     }
     else if(event.keyCode == 40) {//down
-        document.getElementById("key_down").style.backgroundColor = "Gold";
-        document.getElementById("key_down").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_down", true);
+        changeColors("mackey_down", true);
     }
     else if(event.keyCode == 44) {//print
-        document.getElementById("key_print").style.backgroundColor = "Gold";
-        document.getElementById("key_print").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_print", true);
+        changeColors("mackey_print", true);
     }
     else if(event.keyCode == 45) {//insert
-        document.getElementById("key_insert").style.backgroundColor = "Gold";
-        document.getElementById("key_insert").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_insert", true);
+        changeColors("mackey_insert", true);
     }
     else if(event.keyCode == 46) {//delete
-        document.getElementById("key_delete").style.backgroundColor = "Gold";
-        document.getElementById("key_delete").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_delete", true);
+        changeColors("mackey_delete", true);
     }
     else if(event.keyCode == 48) {//0
-        document.getElementById("key_0").style.backgroundColor = "Gold";
-        document.getElementById("key_0").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_0", true);
+        changeColors("mackey_0", true);
     }
     else if(event.keyCode == 49) {//1
-        document.getElementById("key_1").style.backgroundColor = "Gold";
-        document.getElementById("key_1").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_1", true);
+        changeColors("mackey_1", true);
     }
     else if(event.keyCode == 50) {//2
-        document.getElementById("key_2").style.backgroundColor = "Gold";
-        document.getElementById("key_2").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_2", true);
+        changeColors("mackey_2", true);
     }
     else if(event.keyCode == 51) {//3
-        document.getElementById("key_3").style.backgroundColor = "Gold";
-        document.getElementById("key_3").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_3", true);
+        changeColors("mackey_3", true);
     }
     else if(event.keyCode == 52) {//4
-        document.getElementById("key_4").style.backgroundColor = "Gold";
-        document.getElementById("key_4").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_4", true);
+        changeColors("mackey_4", true);
     }
     else if(event.keyCode == 53) {//5
-        document.getElementById("key_5").style.backgroundColor = "Gold";
-        document.getElementById("key_5").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_5", true);
+        changeColors("mackey_5", true);
     }
     else if(event.keyCode == 54) {//6
-        document.getElementById("key_6").style.backgroundColor = "Gold";
-        document.getElementById("key_6").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_6", true);
+        changeColors("mackey_6", true);
     }
     else if(event.keyCode == 55) {//7
-        document.getElementById("key_7").style.backgroundColor = "Gold";
-        document.getElementById("key_7").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_7", true);
+        changeColors("mackey_7", true);
     }
     else if(event.keyCode == 56) {//8
-        document.getElementById("key_8").style.backgroundColor = "Gold";
-        document.getElementById("key_8").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_8", true);
+        changeColors("mackey_8", true);
     }
     else if(event.keyCode == 57) {//9
-        document.getElementById("key_9").style.backgroundColor = "Gold";
-        document.getElementById("key_9").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_9", true);
+        changeColors("mackey_9", true);
     }
     else if(event.keyCode == 65) {//a
-        document.getElementById("key_a").style.backgroundColor = "Gold";
-        document.getElementById("key_a").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_a", true);
+        changeColors("mackey_a", true);
     }
     else if(event.keyCode == 66) {//b
-        document.getElementById("key_b").style.backgroundColor = "Gold";
-        document.getElementById("key_b").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_b", true);
+        changeColors("mackey_b", true);
     }
     else if(event.keyCode == 67) {//c
-        document.getElementById("key_c").style.backgroundColor = "Gold";
-        document.getElementById("key_c").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_c", true);
+        changeColors("mackey_c", true);
     }
     else if(event.keyCode == 68) {//d
-        document.getElementById("key_d").style.backgroundColor = "Gold";
-        document.getElementById("key_d").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_d", true);
+        changeColors("mackey_d", true);
     }
     else if(event.keyCode == 69) {//e
-        document.getElementById("key_e").style.backgroundColor = "Gold";
-        document.getElementById("key_e").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_e", true);
+        changeColors("mackey_e", true);
     }
     else if(event.keyCode == 70) {//f
-        document.getElementById("key_f").style.backgroundColor = "Gold";
-        document.getElementById("key_f").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f", true);
+        changeColors("mackey_f", true);
     }
     else if(event.keyCode == 71) {//g
-        document.getElementById("key_g").style.backgroundColor = "Gold";
-        document.getElementById("key_g").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_g", true);
+        changeColors("mackey_g", true);
     }
     else if(event.keyCode == 72) {//h
-        document.getElementById("key_h").style.backgroundColor = "Gold";
-        document.getElementById("key_h").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_h", true);
+        changeColors("mackey_h", true);
     }
     else if(event.keyCode == 73) {//i
-        document.getElementById("key_i").style.backgroundColor = "Gold";
-        document.getElementById("key_i").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_i", true);
+        changeColors("mackey_i", true);
     }
     else if(event.keyCode == 74) {//j
-        document.getElementById("key_j").style.backgroundColor = "Gold";
-        document.getElementById("key_j").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_j", true);
+        changeColors("mackey_j", true);
     }
     else if(event.keyCode == 75) {//k
-        document.getElementById("key_k").style.backgroundColor = "Gold";
-        document.getElementById("key_k").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_k", true);
+        changeColors("mackey_k", true);
     }
     else if(event.keyCode == 76) {//l
-        document.getElementById("key_l").style.backgroundColor = "Gold";
-        document.getElementById("key_l").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_l", true);
+        changeColors("mackey_l", true);
     }
     else if(event.keyCode == 77) {//m
-        document.getElementById("key_m").style.backgroundColor = "Gold";
-        document.getElementById("key_m").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_m", true);
+        changeColors("mackey_m", true);
     }
     else if(event.keyCode == 78) {//n
-        document.getElementById("key_n").style.backgroundColor = "Gold";
-        document.getElementById("key_n").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_n", true);
+        changeColors("mackey_n", true);
     }
     else if(event.keyCode == 79) {//o
-        document.getElementById("key_o").style.backgroundColor = "Gold";
-        document.getElementById("key_o").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_o", true);
+        changeColors("mackey_o", true);
     }
     else if(event.keyCode == 80) {//p
-        document.getElementById("key_p").style.backgroundColor = "Gold";
-        document.getElementById("key_p").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_p", true);
+        changeColors("mackey_p", true);
     }
     else if(event.keyCode == 81) {//q
-        document.getElementById("key_q").style.backgroundColor = "Gold";
-        document.getElementById("key_q").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_q", true);
+        changeColors("mackey_q", true);
     }
     else if(event.keyCode == 82) {//r
-        document.getElementById("key_r").style.backgroundColor = "Gold";
-        document.getElementById("key_r").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_r", true);
+        changeColors("mackey_r", true);
     }
     else if(event.keyCode == 83) {//s
-        document.getElementById("key_s").style.backgroundColor = "Gold";
-        document.getElementById("key_s").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_s", true);
+        changeColors("mackey_s", true);
     }
     else if(event.keyCode == 84) {//t
-        document.getElementById("key_t").style.backgroundColor = "Gold";
-        document.getElementById("key_t").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_t", true);
+        changeColors("mackey_t", true);
     }
     else if(event.keyCode == 85) {//u
-        document.getElementById("key_u").style.backgroundColor = "Gold";
-        document.getElementById("key_u").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_u", true);
+        changeColors("mackey_u", true);
     }
     else if(event.keyCode == 86) {//v
-        document.getElementById("key_v").style.backgroundColor = "Gold";
-        document.getElementById("key_v").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_v", true);
+        changeColors("mackey_v", true);
     }
     else if(event.keyCode == 87) {//w
-        document.getElementById("key_w").style.backgroundColor = "Gold";
-        document.getElementById("key_w").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_w", true);
+        changeColors("mackey_w", true);
     }
     else if(event.keyCode == 88) {//x
-        document.getElementById("key_x").style.backgroundColor = "Gold";
-        document.getElementById("key_x").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_x", true);
+        changeColors("mackey_x", true);
     }
     else if(event.keyCode == 89) {//y
-        document.getElementById("key_y").style.backgroundColor = "Gold";
-        document.getElementById("key_y").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_y", true);
+        changeColors("mackey_y", true);
     }
     else if(event.keyCode == 90) {//z
-        document.getElementById("key_z").style.backgroundColor = "Gold";
-        document.getElementById("key_z").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_z", true);
+        changeColors("mackey_z", true);
     }
     else if(event.keyCode == 91) {//window-left
-        document.getElementById("key_winLeft").style.backgroundColor = "Gold";
-        document.getElementById("key_winLeft").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_winLeft", true);
+        changeColors("mackey_winLeft", true);
     }
     else if(event.code == "MetaRight") {//window-right
-        document.getElementById("key_winRight").style.backgroundColor = "Gold";
-        document.getElementById("key_winRight").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_winRight", true);
+        changeColors("mackey_winRight", true);
     }
     else if(event.code == "ContextMenu") {//context-menu
-        document.getElementById("key_menu").style.backgroundColor = "Gold";
-        document.getElementById("key_menu").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_menu", true);
+        changeColors("mackey_menu", true);
     }
     else if(event.keyCode == 96) {//numpad-0
-        document.getElementById("key_#0").style.backgroundColor = "Gold";
-        document.getElementById("key_#0").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#0", true);
+        changeColors("mackey_#0", true);
     }
     else if(event.keyCode == 97) {//numpad-1
-        document.getElementById("key_#1").style.backgroundColor = "Gold";
-        document.getElementById("key_#1").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#1", true);
+        changeColors("mackey_#1", true);
     }
     else if(event.keyCode == 98) {//numpad-2
-        document.getElementById("key_#2").style.backgroundColor = "Gold";
-        document.getElementById("key_#2").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#2", true);
+        changeColors("mackey_#2", true);
     }
     else if(event.keyCode == 99) {//numpad-3
-        document.getElementById("key_#3").style.backgroundColor = "Gold";
-        document.getElementById("key_#3").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#3", true);
+        changeColors("mackey_#3", true);
     }
     else if(event.keyCode == 100) {//numpad-4
-        document.getElementById("key_#4").style.backgroundColor = "Gold";
-        document.getElementById("key_#4").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#4", true);
+        changeColors("mackey_#4", true);
     }
     else if(event.keyCode == 101) {//numpad-5
-        document.getElementById("key_#5").style.backgroundColor = "Gold";
-        document.getElementById("key_#5").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#5", true);
+        changeColors("mackey_#5", true);
     }
     else if(event.keyCode == 102) {//numpad-6
-        document.getElementById("key_#6").style.backgroundColor = "Gold";
-        document.getElementById("key_#6").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#6", true);
+        changeColors("mackey_#6", true);
     }
     else if(event.keyCode == 103) {//numpad-7
-        document.getElementById("key_#7").style.backgroundColor = "Gold";
-        document.getElementById("key_#7").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#7", true);
+        changeColors("mackey_#7", true);
     }
     else if(event.keyCode == 104) {//numpad-8
-        document.getElementById("key_#8").style.backgroundColor = "Gold";
-        document.getElementById("key_#8").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#8", true);
+        changeColors("mackey_#8", true);
     }
     else if(event.keyCode == 105) {//numpad-9
-        document.getElementById("key_#9").style.backgroundColor = "Gold";
-        document.getElementById("key_#9").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_#9", true);
+        changeColors("mackey_#9", true);
     }
     else if(event.keyCode == 106) {//multiplication
-        document.getElementById("key_*").style.backgroundColor = "Gold";
-        document.getElementById("key_*").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_*", true);
+        changeColors("mackey_*", true);
     }
     else if(event.keyCode == 107) {//addition
-        document.getElementById("key_+").style.backgroundColor = "Gold";
-        document.getElementById("key_+").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_+", true);
+        changeColors("mackey_+", true);
     }
     else if(event.keyCode == 109) {//subtraction
-        document.getElementById("key_minus").style.backgroundColor = "Gold";
-        document.getElementById("key_minus").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_minus", true);
+        changeColors("mackey_minus", true);
     }
     else if(event.keyCode == 110) {//decimal
-        document.getElementById("key_decimal").style.backgroundColor = "Gold";
-        document.getElementById("key_decimal").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_decimal", true);
+        changeColors("mackey_decimal", true);
     }
     else if(event.keyCode == 111) {//division
-        document.getElementById("key_division").style.backgroundColor = "Gold";
-        document.getElementById("key_division").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_division", true);
+        changeColors("mackey_division", true);
     }
     else if(event.keyCode == 112) {//f1
-        document.getElementById("key_f1").style.backgroundColor = "Gold";
-        document.getElementById("key_f1").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f1", true);
+        changeColors("mackey_f1", true);
     }
     else if(event.keyCode == 113) {//f2
-        document.getElementById("key_f2").style.backgroundColor = "Gold";
-        document.getElementById("key_f2").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f2", true);
+        changeColors("mackey_f2", true);
     }
     else if(event.keyCode == 114) {//f3
-        document.getElementById("key_f3").style.backgroundColor = "Gold";
-        document.getElementById("key_f3").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f3", true);
+        changeColors("mackey_f3", true);
     }
     else if(event.keyCode == 115) {//f4
-        document.getElementById("key_f4").style.backgroundColor = "Gold";
-        document.getElementById("key_f4").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f4", true);
+        changeColors("mackey_f4", true);
     }
     else if(event.keyCode == 116) {//f5
-        document.getElementById("key_f5").style.backgroundColor = "Gold";
-        document.getElementById("key_f5").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f5", true);
+        changeColors("mackey_f5", true);
     }
     else if(event.keyCode == 117) {//f6
-        document.getElementById("key_f6").style.backgroundColor = "Gold";
-        document.getElementById("key_f6").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f6", true);
+        changeColors("mackey_f6", true);
     }
     else if(event.keyCode == 118) {//f7
-        document.getElementById("key_f7").style.backgroundColor = "Gold";
-        document.getElementById("key_f7").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f7", true);
+        changeColors("mackey_f7", true);
     }
     else if(event.keyCode == 119) {//f8
-        document.getElementById("key_f8").style.backgroundColor = "Gold";
-        document.getElementById("key_f8").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f8", true);
+        changeColors("mackey_f8", true);
     }
     else if(event.keyCode == 120) {//f9
-        document.getElementById("key_f9").style.backgroundColor = "Gold";
-        document.getElementById("key_f9").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f9", true);
+        changeColors("mackey_f9", true);
     }
     else if(event.keyCode == 121) {//f10
-        document.getElementById("key_f10").style.backgroundColor = "Gold";
-        document.getElementById("key_f10").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f10", true);
+        changeColors("mackey_f10", true);
     }
     else if(event.keyCode == 122) {//f11
-        document.getElementById("key_f11").style.backgroundColor = "Gold";
-        document.getElementById("key_f11").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f11", true);
+        changeColors("mackey_f11", true);
     }
     else if(event.keyCode == 123) {//f12
-        document.getElementById("key_f12").style.backgroundColor = "Gold";
-        document.getElementById("key_f12").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_f12", true);
+        changeColors("mackey_f12", true);
     }
-    else if(event.keyCode == 12) {//num lock
-        document.getElementById("key_lck").style.backgroundColor = "Gold";
-        document.getElementById("key_lck").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+    else if(event.keyCode == 124) {//f13
+        changeColors("key_f13", true);
+    }
+    else if(event.keyCode == 125) {//f14
+        changeColors("key_f14", true);
+    }
+    else if(event.keyCode == 126) {//f15
+        changeColors("key_f15", true);
+    }
+    else if(event.keyCode == 127) {//f16
+        changeColors("key_f16", true);
+    }
+    else if(event.keyCode == 128) {//f17
+        changeColors("key_f17", true);
+    }
+    else if(event.keyCode == 129) {//f18
+        changeColors("key_f18", true);
+    }
+    else if(event.keyCode == 130) {//f19
+        changeColors("key_f19", true);
+    }
+    else if(event.keyCode == 12) {//num lock & clear
+        changeColors("key_lck", true);
+        changeColors("key_clr", true);
     }
     else if(event.keyCode == 145) {//scroll lock
-        document.getElementById("key_scroll").style.backgroundColor = "Gold";
-        document.getElementById("key_scroll").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_scroll", true);
+        changeColors("mackey_scroll", true);
     }
     else if(event.keyCode == 186) {//;
-        document.getElementById("key_;").style.backgroundColor = "Gold";
-        document.getElementById("key_;").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_;", true);
+        changeColors("mackey_;", true);
     }
-    else if(event.keyCode == 187) {//=
-        document.getElementById("key_=").style.backgroundColor = "Gold";
-        document.getElementById("key_=").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+    else if(event.code == "Equal") {//=
+        changeColors("key_=", true);
+        changeColors("mackey_=", true);
+    }
+    else if(event.code == "NumpadEqual") {//=
+        changeColors("mackey_=2", true);
     }
     else if(event.keyCode == 188) {//,
-        document.getElementById("key_,").style.backgroundColor = "Gold";
-        document.getElementById("key_,").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_,", true);
+        changeColors("mackey_,", true);
     }
     else if(event.keyCode == 189) {//-
-        document.getElementById("key_-").style.backgroundColor = "Gold";
-        document.getElementById("key_-").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_-", true);
+        changeColors("mackey_-", true);
     }
     else if(event.keyCode == 190) {//.
-        document.getElementById("key_.").style.backgroundColor = "Gold";
-        document.getElementById("key_.").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_.", true);
+        changeColors("mackey_.", true);
     }
     else if(event.keyCode == 191) {///
-        document.getElementById("key_/").style.backgroundColor = "Gold";
-        document.getElementById("key_/").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_/", true);
+        changeColors("mackey_/", true);
     }
     else if(event.keyCode == 192) {//~
-        document.getElementById("key_~").style.backgroundColor = "Gold";
-        document.getElementById("key_~").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_~", true);
+        changeColors("mackey_~", true);
     }
     else if(event.keyCode == 219) {//[
-        document.getElementById("key_[").style.backgroundColor = "Gold";
-        document.getElementById("key_[").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_[", true);
+        changeColors("mackey_[", true);
     }
     else if(event.keyCode == 220) {//\\
-        document.getElementById("key_\\").style.backgroundColor = "Gold";
-        document.getElementById("key_\\").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_\\", true);
+        changeColors("mackey_\\", true);
     }
     else if(event.keyCode == 221) {//]
-        document.getElementById("key_]").style.backgroundColor = "Gold";
-        document.getElementById("key_]").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_]", true);
+        changeColors("mackey_]", true);
     }
     else if(event.keyCode == 222) {//'
-        document.getElementById("key_'").style.backgroundColor = "Gold";
-        document.getElementById("key_'").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        changeColors("key_'", true);
+        changeColors("mackey_'", true);
     }
 });
 document.addEventListener('keyup', function(event) {
     if(event.keyCode == 8) {// backspace
-        document.getElementById("key_back").style.backgroundColor = "LightGreen";
-        document.getElementById("key_back").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_back", false);
+        changeColors("mackey_back", false);
     }
     else if(event.keyCode == 9) {//tab
-        document.getElementById("key_tab").style.backgroundColor = "LightGreen";
-        document.getElementById("key_tab").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_tab", false);
+        changeColors("mackey_tab", false);
     }
     else if(event.code == "Enter") {//enter
-        document.getElementById("key_enter").style.backgroundColor = "LightGreen";
-        document.getElementById("key_enter").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_enter", false);
+        changeColors("mackey_enter", false);
     }
     else if(event.code == "NumpadEnter") {//numpad-enter
-        document.getElementById("key_enter2").style.backgroundColor = "LightGreen";
-        document.getElementById("key_enter2").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_enter2", false);
+        changeColors("mackey_enter2", false);
     }
     else if(event.code == "ShiftLeft") {//shift-left
-        document.getElementById("key_shiftLeft").style.backgroundColor = "LightGreen";
-        document.getElementById("key_shiftLeft").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_shiftLeft", false);
+        changeColors("mackey_shiftLeft", false);
     }
     else if(event.code == "ShiftRight") {//shift-right
-        document.getElementById("key_shiftRight").style.backgroundColor = "LightGreen";
-        document.getElementById("key_shiftRight").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_shiftRight", false);
+        changeColors("mackey_shiftRight", false);
     }
     else if(event.code == "ControlLeft") {//ctrl-left
-        document.getElementById("key_controlLeft").style.backgroundColor = "LightGreen";
-        document.getElementById("key_controlLeft").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_controlLeft", false);
+        changeColors("mackey_controlLeft", false);
     }
     else if(event.code == "ControlRight") {//ctrl-right
-        document.getElementById("key_controlRight").style.backgroundColor = "LightGreen";
-        document.getElementById("key_controlRight").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_controlRight", false);
+        changeColors("mackey_controlRight", false);
     }
     else if(event.code == "AltLeft") {//alt
-        document.getElementById("key_altLeft").style.backgroundColor = "LightGreen";
-        document.getElementById("key_altLeft").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_altLeft", false);
+        changeColors("mackey_altLeft", false);
     }
     else if(event.code == "AltRight") {//alt
-        document.getElementById("key_altRight").style.backgroundColor = "LightGreen";
-        document.getElementById("key_altRight").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_altRight", false);
+        changeColors("mackey_altRight", false);
     }
     else if(event.keyCode == 19) {//pause
-        document.getElementById("key_pause").style.backgroundColor = "LightGreen";
-        document.getElementById("key_pause").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_pause", false);
+        changeColors("mackey_pause", false);
     }
     else if(event.keyCode == 20) {//caps
-        document.getElementById("key_caps").style.backgroundColor = "LightGreen";
-        document.getElementById("key_caps").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_caps", false);
+        changeColors("mackey_caps", false);
     }
     else if(event.keyCode == 27) {//esc
-        document.getElementById("key_esc").style.backgroundColor = "LightGreen";
-        document.getElementById("key_esc").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_esc", false);
+        changeColors("mackey_esc", false);
     }
     else if(event.keyCode == 32) {//space
-        document.getElementById("key_space").style.backgroundColor = "LightGreen";
-        document.getElementById("key_space").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_space", false);
+        changeColors("mackey_space", false);
     }
     else if(event.keyCode == 33) {//pg up
-        document.getElementById("key_pgup").style.backgroundColor = "LightGreen";
-        document.getElementById("key_pgup").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_pgup", false);
+        changeColors("mackey_pgup", false);
     }
     else if(event.keyCode == 34) {//pg dn
-        document.getElementById("key_pgdn").style.backgroundColor = "LightGreen";
-        document.getElementById("key_pgdn").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_pgdn", false);
+        changeColors("mackey_pgdn", false);
     }
     else if(event.keyCode == 35) {//end
-        document.getElementById("key_end").style.backgroundColor = "LightGreen";
-        document.getElementById("key_end").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_end", false);
+        changeColors("mackey_end", false);
     }
     else if(event.keyCode == 36) {//home
-        document.getElementById("key_home").style.backgroundColor = "LightGreen";
-        document.getElementById("key_home").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_home", false);
+        changeColors("mackey_home", false);
     }
     else if(event.keyCode == 37) {//left
-        document.getElementById("key_left").style.backgroundColor = "LightGreen";
-        document.getElementById("key_left").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_left", false);
+        changeColors("mackey_left", false);
     }
     else if(event.keyCode == 38) {//up
-        document.getElementById("key_up").style.backgroundColor = "LightGreen";
-        document.getElementById("key_up").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_up", false);
+        changeColors("mackey_up", false);
     }
     else if(event.keyCode == 39) {//right
-        document.getElementById("key_right").style.backgroundColor = "LightGreen";
-        document.getElementById("key_right").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_right", false);
+        changeColors("mackey_right", false);
     }
     else if(event.keyCode == 40) {//down
-        document.getElementById("key_down").style.backgroundColor = "LightGreen";
-        document.getElementById("key_down").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_down", false);
+        changeColors("mackey_down", false);
     }
     else if(event.keyCode == 44) {//print
-        document.getElementById("key_print").style.backgroundColor = "LightGreen";
-        document.getElementById("key_print").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_print", false);
+        changeColors("mackey_print", false);
     }
     else if(event.keyCode == 45) {//insert
-        document.getElementById("key_insert").style.backgroundColor = "LightGreen";
-        document.getElementById("key_insert").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_insert", false);
+        changeColors("mackey_insert", false);
     }
     else if(event.keyCode == 46) {//delete
-        document.getElementById("key_delete").style.backgroundColor = "LightGreen";
-        document.getElementById("key_delete").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_delete", false);
+        changeColors("mackey_delete", false);
     }
     else if(event.keyCode == 48) {//0
-        document.getElementById("key_0").style.backgroundColor = "LightGreen";
-        document.getElementById("key_0").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_0", false);
+        changeColors("mackey_0", false);
     }
     else if(event.keyCode == 49) {//1
-        document.getElementById("key_1").style.backgroundColor = "LightGreen";
-        document.getElementById("key_1").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_1", false);
+        changeColors("mackey_1", false);
     }
     else if(event.keyCode == 50) {//2
-        document.getElementById("key_2").style.backgroundColor = "LightGreen";
-        document.getElementById("key_2").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_2", false);
+        changeColors("mackey_2", false);
     }
     else if(event.keyCode == 51) {//3
-        document.getElementById("key_3").style.backgroundColor = "LightGreen";
-        document.getElementById("key_3").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_3", false);
+        changeColors("mackey_3", false);
     }
     else if(event.keyCode == 52) {//4
-        document.getElementById("key_4").style.backgroundColor = "LightGreen";
-        document.getElementById("key_4").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_4", false);
+        changeColors("mackey_4", false);
     }
     else if(event.keyCode == 53) {//5
-        document.getElementById("key_5").style.backgroundColor = "LightGreen";
-        document.getElementById("key_5").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_5", false);
+        changeColors("mackey_5", false);
     }
     else if(event.keyCode == 54) {//6
-        document.getElementById("key_6").style.backgroundColor = "LightGreen";
-        document.getElementById("key_6").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_6", false);
+        changeColors("mackey_6", false);
     }
     else if(event.keyCode == 55) {//7
-        document.getElementById("key_7").style.backgroundColor = "LightGreen";
-        document.getElementById("key_7").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_7", false);
+        changeColors("mackey_7", false);
     }
     else if(event.keyCode == 56) {//8
-        document.getElementById("key_8").style.backgroundColor = "LightGreen";
-        document.getElementById("key_8").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_8", false);
+        changeColors("mackey_8", false);
     }
     else if(event.keyCode == 57) {//9
-        document.getElementById("key_9").style.backgroundColor = "LightGreen";
-        document.getElementById("key_9").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_9", false);
+        changeColors("mackey_9", false);
     }
     else if(event.keyCode == 65) {//a
-        document.getElementById("key_a").style.backgroundColor = "LightGreen";
-        document.getElementById("key_a").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_a", false);
+        changeColors("mackey_a", false);
     }
     else if(event.keyCode == 66) {//b
-        document.getElementById("key_b").style.backgroundColor = "LightGreen";
-        document.getElementById("key_b").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_b", false);
+        changeColors("mackey_b", false);
     }
     else if(event.keyCode == 67) {//c
-        document.getElementById("key_c").style.backgroundColor = "LightGreen";
-        document.getElementById("key_c").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_c", false);
+        changeColors("mackey_c", false);
     }
     else if(event.keyCode == 68) {//d
-        document.getElementById("key_d").style.backgroundColor = "LightGreen";
-        document.getElementById("key_d").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_d", false);
+        changeColors("mackey_d", false);
     }
     else if(event.keyCode == 69) {//e
-        document.getElementById("key_e").style.backgroundColor = "LightGreen";
-        document.getElementById("key_e").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_e", false);
+        changeColors("mackey_e", false);
     }
     else if(event.keyCode == 70) {//f
-        document.getElementById("key_f").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f", false);
+        changeColors("mackey_f", false);
     }
     else if(event.keyCode == 71) {//g
-        document.getElementById("key_g").style.backgroundColor = "LightGreen";
-        document.getElementById("key_g").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_g", false);
+        changeColors("mackey_g", false);
     }
     else if(event.keyCode == 72) {//h
-        document.getElementById("key_h").style.backgroundColor = "LightGreen";
-        document.getElementById("key_h").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_h", false);
+        changeColors("mackey_h", false);
     }
     else if(event.keyCode == 73) {//i
-        document.getElementById("key_i").style.backgroundColor = "LightGreen";
-        document.getElementById("key_i").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_i", false);
+        changeColors("mackey_i", false);
     }
     else if(event.keyCode == 74) {//j
-        document.getElementById("key_j").style.backgroundColor = "LightGreen";
-        document.getElementById("key_j").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_j", false);
+        changeColors("mackey_j", false);
     }
     else if(event.keyCode == 75) {//k
-        document.getElementById("key_k").style.backgroundColor = "LightGreen";
-        document.getElementById("key_k").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_k", false);
+        changeColors("mackey_k", false);
     }
     else if(event.keyCode == 76) {//l
-        document.getElementById("key_l").style.backgroundColor = "LightGreen";
-        document.getElementById("key_l").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_l", false);
+        changeColors("mackey_l", false);
     }
     else if(event.keyCode == 77) {//m
-        document.getElementById("key_m").style.backgroundColor = "LightGreen";
-        document.getElementById("key_m").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_m", false);
+        changeColors("mackey_m", false);
     }
     else if(event.keyCode == 78) {//n
-        document.getElementById("key_n").style.backgroundColor = "LightGreen";
-        document.getElementById("key_n").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_n", false);
+        changeColors("mackey_n", false);
     }
     else if(event.keyCode == 79) {//o
-        document.getElementById("key_o").style.backgroundColor = "LightGreen";
-        document.getElementById("key_o").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_o", false);
+        changeColors("mackey_o", false);
     }
     else if(event.keyCode == 80) {//p
-        document.getElementById("key_p").style.backgroundColor = "LightGreen";
-        document.getElementById("key_p").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_p", false);
+        changeColors("mackey_p", false);
     }
     else if(event.keyCode == 81) {//q
-        document.getElementById("key_q").style.backgroundColor = "LightGreen";
-        document.getElementById("key_q").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_q", false);
+        changeColors("mackey_q", false);
     }
     else if(event.keyCode == 82) {//r
-        document.getElementById("key_r").style.backgroundColor = "LightGreen";
-        document.getElementById("key_r").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_r", false);
+        changeColors("mackey_r", false);
     }
     else if(event.keyCode == 83) {//s
-        document.getElementById("key_s").style.backgroundColor = "LightGreen";
-        document.getElementById("key_s").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_s", false);
+        changeColors("mackey_s", false);
     }
     else if(event.keyCode == 84) {//t
-        document.getElementById("key_t").style.backgroundColor = "LightGreen";
-        document.getElementById("key_t").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_t", false);
+        changeColors("mackey_t", false);
     }
     else if(event.keyCode == 85) {//u
-        document.getElementById("key_u").style.backgroundColor = "LightGreen";
-        document.getElementById("key_u").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_u", false);
+        changeColors("mackey_u", false);
     }
     else if(event.keyCode == 86) {//v
-        document.getElementById("key_v").style.backgroundColor = "LightGreen";
-        document.getElementById("key_v").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_v", false);
+        changeColors("mackey_v", false);
     }
     else if(event.keyCode == 87) {//w
-        document.getElementById("key_w").style.backgroundColor = "LightGreen";
-        document.getElementById("key_w").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_w", false);
+        changeColors("mackey_w", false);
     }
     else if(event.keyCode == 88) {//x
-        document.getElementById("key_x").style.backgroundColor = "LightGreen";
-        document.getElementById("key_x").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_x", false);
+        changeColors("mackey_x", false);
     }
     else if(event.keyCode == 89) {//y
-        document.getElementById("key_y").style.backgroundColor = "LightGreen";
-        document.getElementById("key_y").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_y", false);
+        changeColors("mackey_y", false);
     }
     else if(event.keyCode == 90) {//z
-        document.getElementById("key_z").style.backgroundColor = "LightGreen";
-        document.getElementById("key_z").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_z", false);
+        changeColors("mackey_z", false);
     }
     else if(event.keyCode == 91) {//window-left
-        document.getElementById("key_winLeft").style.backgroundColor = "LightGreen";
-        document.getElementById("key_winLeft").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_winLeft", false);
+        changeColors("mackey_winLeft", false);
     }
     else if(event.code == "MetaRight") {//window-right
-        document.getElementById("key_winRight").style.backgroundColor = "LightGreen";
-        document.getElementById("key_winRight").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_winRight", false);
+        changeColors("mackey_winRight", false);
     }
     else if(event.code == "ContextMenu") {//context-menu
-        document.getElementById("key_menu").style.backgroundColor = "LightGreen";
-        document.getElementById("key_menu").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_menu", false);
+        changeColors("mackey_menu", false);
     }
     else if(event.keyCode == 96) {//numpad-0
-        document.getElementById("key_#0").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#0").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#0", false);
+        changeColors("mackey_#0", false);
     }
     else if(event.keyCode == 97) {//numpad-1
-        document.getElementById("key_#1").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#1").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#1", false);
+        changeColors("mackey_#1", false);
     }
     else if(event.keyCode == 98) {//numpad-2
-        document.getElementById("key_#2").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#2").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#2", false);
+        changeColors("mackey_#2", false);
     }
     else if(event.keyCode == 99) {//numpad-3
-        document.getElementById("key_#3").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#3").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#3", false);
+        changeColors("mackey_#3", false);
     }
     else if(event.keyCode == 100) {//numpad-4
-        document.getElementById("key_#4").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#4").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#4", false);
+        changeColors("mackey_#4", false);
     }
     else if(event.keyCode == 101) {//numpad-5
-        document.getElementById("key_#5").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#5").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#5", false);
+        changeColors("mackey_#5", false);
     }
     else if(event.keyCode == 102) {//numpad-6
-        document.getElementById("key_#6").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#6").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#6", false);
+        changeColors("mackey_#6", false);
     }
     else if(event.keyCode == 103) {//numpad-7
-        document.getElementById("key_#7").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#7").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#7", false);
+        changeColors("mackey_#7", false);
     }
     else if(event.keyCode == 104) {//numpad-8
-        document.getElementById("key_#8").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#8").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#8", false);
+        changeColors("mackey_#8", false);
     }
     else if(event.keyCode == 105) {//numpad-9
-        document.getElementById("key_#9").style.backgroundColor = "LightGreen";
-        document.getElementById("key_#9").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_#9", false);
+        changeColors("mackey_#9", false);
     }
     else if(event.keyCode == 106) {//multiplication
-        document.getElementById("key_*").style.backgroundColor = "LightGreen";
-        document.getElementById("key_*").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_*", false);
+        changeColors("mackey_*", false);
     }
     else if(event.keyCode == 107) {//addition
-        document.getElementById("key_+").style.backgroundColor = "LightGreen";
-        document.getElementById("key_+").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_+", false);
+        changeColors("mackey_+", false);
     }
     else if(event.keyCode == 109) {//subtraction
-        document.getElementById("key_minus").style.backgroundColor = "LightGreen";
-        document.getElementById("key_minus").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_minus", false);
+        changeColors("mackey_minus", false);
     }
     else if(event.keyCode == 110) {//decimal
-        document.getElementById("key_decimal").style.backgroundColor = "LightGreen";
-        document.getElementById("key_decimal").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_decimal", false);
+        changeColors("mackey_decimal", false);
     }
     else if(event.keyCode == 111) {//division
-        document.getElementById("key_division").style.backgroundColor = "LightGreen";
-        document.getElementById("key_division").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_division", false);
+        changeColors("mackey_division", false);
     }
     else if(event.keyCode == 112) {//f1
-        document.getElementById("key_f1").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f1").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f1", false);
+        changeColors("mackey_f1", false);
     }
     else if(event.keyCode == 113) {//f2
-        document.getElementById("key_f2").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f2").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f2", false);
+        changeColors("mackey_f2", false);
     }
     else if(event.keyCode == 114) {//f3
-        document.getElementById("key_f3").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f3").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f3", false);
+        changeColors("mackey_f3", false);
     }
     else if(event.keyCode == 115) {//f4
-        document.getElementById("key_f4").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f4").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f4", false);
+        changeColors("mackey_f4", false);
     }
     else if(event.keyCode == 116) {//f5
-        document.getElementById("key_f5").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f5").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f5", false);
+        changeColors("mackey_f5", false);
     }
     else if(event.keyCode == 117) {//f6
-        document.getElementById("key_f6").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f6").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f6", false);
+        changeColors("mackey_f6", false);
     }
     else if(event.keyCode == 118) {//f7
-        document.getElementById("key_f7").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f7").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f7", false);
+        changeColors("mackey_f7", false);
     }
     else if(event.keyCode == 119) {//f8
-        document.getElementById("key_f8").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f8").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f8", false);
+        changeColors("mackey_f8", false);
     }
     else if(event.keyCode == 120) {//f9
-        document.getElementById("key_f9").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f9").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f9", false);
+        changeColors("mackey_f9", false);
     }
     else if(event.keyCode == 121) {//f10
-        document.getElementById("key_f10").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f10").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f10", false);
+        changeColors("mackey_f10", false);
     }
     else if(event.keyCode == 122) {//f11
-        document.getElementById("key_f11").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f11").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f11", false);
+        changeColors("mackey_f11", false);
     }
     else if(event.keyCode == 123) {//f12
-        document.getElementById("key_f12").style.backgroundColor = "LightGreen";
-        document.getElementById("key_f12").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_f12", false);
+        changeColors("mackey_f12", false);
     }
-    else if(event.keyCode == 12) {//num lock
-        document.getElementById("key_lck").style.backgroundColor = "LightGreen";
-        document.getElementById("key_lck").style.boxShadow = "0px 0px 5px #474343";
+    else if(event.keyCode == 124) {//f13
+        changeColors("key_f13", false);
+    }
+    else if(event.keyCode == 125) {//f14
+        changeColors("key_f14", false);
+    }
+    else if(event.keyCode == 126) {//f15
+        changeColors("key_f15", false);
+    }
+    else if(event.keyCode == 127) {//f16
+        changeColors("key_f16", false);
+    }
+    else if(event.keyCode == 128) {//f17
+        changeColors("key_f17", false);
+    }
+    else if(event.keyCode == 129) {//f18
+        changeColors("key_f18", false);
+    }
+    else if(event.keyCode == 130) {//f19
+        changeColors("key_f19", false);
+    }
+    else if(event.keyCode == 12) {//num lock & clear
+        changeColors("key_lck", false);
+        changeColors("key_clr", false);
     }
     else if(event.keyCode == 145) {//scroll lock
-        document.getElementById("key_scroll").style.backgroundColor = "LightGreen";
-        document.getElementById("key_scroll").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_scroll", false);
+        changeColors("mackey_scroll", false);
     }
     else if(event.keyCode == 186) {//;
-        document.getElementById("key_;").style.backgroundColor = "LightGreen";
-        document.getElementById("key_;").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_;", false);
+        changeColors("mackey_;", false);
     }
-    else if(event.keyCode == 187) {//=
-        document.getElementById("key_=").style.backgroundColor = "LightGreen";
-        document.getElementById("key_=").style.boxShadow = "0px 0px 5px #474343";
+    else if(event.code == "Equal") {//=
+        changeColors("key_=", false);
+        changeColors("mackey_=", false);
+    }
+    else if(event.code == "NumpadEqual") {//=
+        changeColors("mackey_=2", false);
     }
     else if(event.keyCode == 188) {//,
-        document.getElementById("key_,").style.backgroundColor = "LightGreen";
-        document.getElementById("key_,").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_,", false);
+        changeColors("mackey_,", false);
     }
     else if(event.keyCode == 189) {//-
-        document.getElementById("key_-").style.backgroundColor = "LightGreen";
-        document.getElementById("key_-").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_-", false);
+        changeColors("mackey_-", false);
     }
     else if(event.keyCode == 190) {//.
-        document.getElementById("key_.").style.backgroundColor = "LightGreen";
-        document.getElementById("key_.").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_.", false);
+        changeColors("mackey_.", false);
     }
     else if(event.keyCode == 191) {///
-        document.getElementById("key_/").style.backgroundColor = "LightGreen";
-        document.getElementById("key_/").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_/", false);
+        changeColors("mackey_/", false);
     }
     else if(event.keyCode == 192) {//~
-        document.getElementById("key_~").style.backgroundColor = "LightGreen";
-        document.getElementById("key_~").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_~", false);
+        changeColors("mackey_~", false);
     }
     else if(event.keyCode == 219) {//[
-        document.getElementById("key_[").style.backgroundColor = "LightGreen";
-        document.getElementById("key_[").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_[", false);
+        changeColors("mackey_[", false);
     }
     else if(event.keyCode == 220) {//\\
-        document.getElementById("key_\\").style.backgroundColor = "LightGreen";
-        document.getElementById("key_\\").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_\\", false);
+        changeColors("mackey_\\", false);
     }
     else if(event.keyCode == 221) {//]
-        document.getElementById("key_]").style.backgroundColor = "LightGreen";
-        document.getElementById("key_]").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_]", false);
+        changeColors("mackey_]", false);
     }
     else if(event.keyCode == 222) {//'
-        document.getElementById("key_'").style.backgroundColor = "LightGreen";
-        document.getElementById("key_'").style.boxShadow = "0px 0px 5px #474343";
+        changeColors("key_'", false);
+        changeColors("mackey_'", false);
     }
 });

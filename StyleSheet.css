@@ -18,10 +18,6 @@ a:link, a:visited {
     color: black;
     text-decoration: none;
 }
-a h2:hover {
-    color: black;
-    text-decoration: none;
-}
 a:hover {
     text-decoration: underline;
     color: white;
@@ -50,6 +46,9 @@ a:active {
     padding: 5px;
     box-shadow: 0px 0px 5px #474343;
     overflow-wrap: break-word;
+}
+#keyboardMacs {
+    display: none;
 }
 .list-inline {
     margin-top: 5px;
@@ -88,6 +87,13 @@ button.three {
     width: 31.59%;
     visibility: hidden;
 }
+.macfn {
+    width: 6.61%;
+    border-radius: 10px;
+}
+.grayed {
+    background: LightGray;
+}
 .back {
     width: 14.6%;
     border-radius: 10px;
@@ -114,6 +120,10 @@ button.three {
 }
 .other {
     width: 8.28%;
+    border-radius: 10px;
+}
+.macother {
+    width: 10.5%;
     border-radius: 10px;
 }
 .v-btn {

@@ -1,7 +1,9 @@
-<!--TODO: FNLock button on the side-->
+<!--TODO: Clear History-->
+<!--TODO: Deselect mac toggle after click-->
 <!--TODO: Detect Windows or Mac-->
 <!--TODO: Mac Toggle: Switches letters to mac keyboard-->
 <!--TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,11 +36,17 @@
     <div class="container">
         <div id="keyboard">
             <div class="row justify-content-center">
+                <div class="form-check form-switch col-md-11">
+                    <input class="form-check-input" id="keyboardSwitch" type="checkbox">
+                    <label class="form-check-label" for="keyboardSwitch">Mac Keyboard</label>
+                </div>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-md-11">
                     <p class="overflow-auto" id="history"></p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="keyboardWindows">
                 <div class="col-md-7">
                     <div class="list-inline">
                         <button class="one" id="key_esc">ESC</button>
@@ -73,10 +81,10 @@
                         <button class="one" id="key_0">0</button>
                         <button class="one" id="key_-">-</button>
                         <button class="one" id="key_=">=</button>
-                        <button id="key_back" class="back">Backspace</button>
+                        <button class="back" id="key_back">Backspace</button>
                     </div>
                     <div class="list-inline">
-                        <button id="key_tab" class="tab">Tab</button>
+                        <button class="tab" id="key_tab">Tab</button>
                         <button class="one" id="key_q">q</button>
                         <button class="one" id="key_w">w</button>
                         <button class="one" id="key_e">e</button>
@@ -89,10 +97,10 @@
                         <button class="one" id="key_p">p</button>
                         <button class="one" id="key_[">[</button>
                         <button class="one" id="key_]">]</button>
-                        <button id="key_\" class="slace">\</button>
+                        <button class="slace" id="key_\" >\</button>
                     </div>
                     <div class="list-inline">
-                        <button id="key_caps" class="caps">Caps</button>
+                        <button class="caps" id="key_caps">Caps</button>
                         <button class="one" id="key_a">a</button>
                         <button class="one" id="key_s">s</button>
                         <button class="one" id="key_d">d</button>
@@ -104,10 +112,10 @@
                         <button class="one" id="key_l">l</button>
                         <button class="one" id="key_;">;</button>
                         <button class="one" id="key_'">'</button>
-                        <button id="key_enter" class="ent-btn">Enter</button>
+                        <button class="ent-btn" id="key_enter">Enter</button>
                     </div>
                     <div class="list-inline">
-                        <button id="key_shiftLeft" class="shift">Shift</button>
+                        <button class="shift" id="key_shiftLeft">Shift</button>
                         <button class="one" id="key_z">z</button>
                         <button class="one" id="key_x">x</button>
                         <button class="one" id="key_c">c</button>
@@ -118,17 +126,17 @@
                         <button class="one" id="key_,">,</button>
                         <button class="one" id="key_.">.</button>
                         <button class="one" id="key_/">/</button>
-                        <button id="key_shiftRight" class="shift">Shift</button>
+                        <button class="shift" id="key_shiftRight">Shift</button>
                     </div>
                     <div class="list-inline">
-                        <button id="key_controlLeft" class="other">Ctrl</button>
-                        <button id="key_winLeft" class="other">Win</button>
-                        <button id="key_altLeft" class="other">Alt</button>
-                        <button id="key_space" class="space">Space</button>
-                        <button id="key_altRight" class="other">Alt</button>
-                        <button id="key_winRight" class="other">Win</button>
-                        <button id="key_menu" class="other">Menu</button>
-                        <button id="key_controlRight" class="other">Ctrl</button>
+                        <button class="other" id="key_controlLeft">Ctrl</button>
+                        <button class="other" id="key_winLeft">Win</button>
+                        <button class="other" id="key_altLeft">Alt</button>
+                        <button class="space" id="key_space">Space</button>
+                        <button class="other" id="key_altRight">Alt</button>
+                        <button class="other" id="key_winRight">Win</button>
+                        <button class="other" id="key_menu">Menu</button>
+                        <button class="other" id="key_controlRight">Ctrl</button>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -189,6 +197,163 @@
                     <div class="list-inline">
                         <button class="zero" id="key_#0">0</button>
                         <button class="three" id="key_decimal">.</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" id="keyboardMacs">
+                <div class="col-md-7">
+                    <div class="list-inline">
+                        <button class="macfn" id="mackey_esc">ESC</button>
+                        <button class="macfn" id="mackey_f1">F1</button>
+                        <button class="macfn" id="mackey_f2">F2</button>
+                        <button class="macfn" id="mackey_f3">F3</button>
+                        <button class="macfn" id="mackey_f4">F4</button>
+                        <button class="macfn" id="mackey_f5">F5</button>
+                        <button class="macfn" id="mackey_f6">F6</button>
+                        <button class="macfn" id="mackey_f7">F7</button>
+                        <button class="macfn" id="mackey_f8">F8</button>
+                        <button class="macfn" id="mackey_f9">F9</button>
+                        <button class="macfn" id="mackey_f10">F10</button>
+                        <button class="macfn" id="mackey_f11">F11</button>
+                        <button class="macfn" id="mackey_f12">F12</button>
+                        <button class="macfn grayed">Eject</button>
+                    </div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="one" id="mackey_~">~</button>
+                        <button class="one" id="mackey_1">1</button>
+                        <button class="one" id="mackey_2">2</button>
+                        <button class="one" id="mackey_3">3</button>
+                        <button class="one" id="mackey_4">4</button>
+                        <button class="one" id="mackey_5">5</button>
+                        <button class="one" id="mackey_6">6</button>
+                        <button class="one" id="mackey_7">7</button>
+                        <button class="one" id="mackey_8">8</button>
+                        <button class="one" id="mackey_9">9</button>
+                        <button class="one" id="mackey_0">0</button>
+                        <button class="one" id="mackey_-">-</button>
+                        <button class="one" id="mackey_=">=</button>
+                        <button class="back" id="mackey_back">Backspace</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="tab" id="mackey_tab">Tab</button>
+                        <button class="one" id="mackey_q">q</button>
+                        <button class="one" id="mackey_w">w</button>
+                        <button class="one" id="mackey_e">e</button>
+                        <button class="one" id="mackey_r">r</button>
+                        <button class="one" id="mackey_t">t</button>
+                        <button class="one" id="mackey_y">y</button>
+                        <button class="one" id="mackey_u">u</button>
+                        <button class="one" id="mackey_i">i</button>
+                        <button class="one" id="mackey_o">o</button>
+                        <button class="one" id="mackey_p">p</button>
+                        <button class="one" id="mackey_[">[</button>
+                        <button class="one" id="mackey_]">]</button>
+                        <button class="slace" id="mackey_\">\</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="caps" id="mackey_caps">Caps</button>
+                        <button class="one" id="mackey_a">a</button>
+                        <button class="one" id="mackey_s">s</button>
+                        <button class="one" id="mackey_d">d</button>
+                        <button class="one" id="mackey_f">f</button>
+                        <button class="one" id="mackey_g">g</button>
+                        <button class="one" id="mackey_h">h</button>
+                        <button class="one" id="mackey_j">j</button>
+                        <button class="one" id="mackey_k">k</button>
+                        <button class="one" id="mackey_l">l</button>
+                        <button class="one" id="mackey_;">;</button>
+                        <button class="one" id="mackey_'">'</button>
+                        <button class="ent-btn" id="mackey_enter">Enter</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="shift" id="mackey_shiftLeft">Shift</button>
+                        <button class="one" id="mackey_z">z</button>
+                        <button class="one" id="mackey_x">x</button>
+                        <button class="one" id="mackey_c">c</button>
+                        <button class="one" id="mackey_v">v</button>
+                        <button class="one" id="mackey_b">b</button>
+                        <button class="one" id="mackey_n">n</button>
+                        <button class="one" id="mackey_m">m</button>
+                        <button class="one" id="mackey_,">,</button>
+                        <button class="one" id="mackey_.">.</button>
+                        <button class="one" id="mackey_/">/</button>
+                        <button class="shift" id="mackey_shiftRight">Shift</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="macother" id="mackey_controlLeft">Ctrl</button>
+                        <button class="other" id="mackey_altLeft">Opt</button>
+                        <button class="macother" id="mackey_winLeft">Cmd</button>
+                        <button class="space" id="mackey_space">Space</button>
+                        <button class="macother" id="mackey_winRight">Cmd</button>
+                        <button class="other" id="mackey_altRight">Opt</button>
+                        <button class="macother" id="mackey_controlRight" >Ctrl</button>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="list-inline">
+                        <button class="two" id="key_f13">F13</button>
+                        <button class="two" id="key_f14">F14</button>
+                        <button class="two" id="key_f15">F15</button>
+                    </div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="two grayed">fn</button>
+                        <button class="two" id="mackey_home">Home</button>
+                        <button class="two" id="mackey_pgup">PgUp</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="two" id="mackey_delete">Delete</button>
+                        <button class="two" id="mackey_end">End</button>
+                        <button class="two" id="mackey_pgdn">PgDn</button>
+                    </div>
+                    <div class="list-inline"></div>
+                    <div class="list-inline">
+                        <button class="empty-space">-</button>
+                        <button class="two" id="mackey_up">Up</button>
+                        <button class="empty-space">-</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="two" id="mackey_left">Left</button>
+                        <button class="two" id="mackey_down">Down</button>
+                        <button class="two" id="mackey_right">Right</button>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="list-inline">
+                        <button class="three" id="key_f16">F16</button>
+                        <button class="three" id="key_f17">F17</button>
+                        <button class="three" id="key_f18">F18</button>
+                        <button class="three" id="key_f19">F19</button>
+                    </div>
+                    <div class="in-between"> </div>
+                    <div class="list-inline">
+                        <button class="three" id="key_clr">Clr</button>
+                        <button class="three" id="mackey_=2">=</button>
+                        <button class="three" id="mackey_division">/</button>
+                        <button class="three" id="mackey_*">*</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="mackey_#7">7</button>
+                        <button class="three" id="mackey_#8">8</button>
+                        <button class="three" id="mackey_#9">9</button>
+                        <button class="three" id="mackey_minus">-</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="mackey_#4">4</button>
+                        <button class="three" id="mackey_#5">5</button>
+                        <button class="three" id="mackey_#6">6</button>
+                        <button class="three" id="mackey_+">+</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="three" id="mackey_#1">1</button>
+                        <button class="three" id="mackey_#2">2</button>
+                        <button class="three" id="mackey_#3">3</button>
+                        <button class="v-btn" id="mackey_enter2">ENT</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="zero" id="mackey_#0">0</button>
+                        <button class="three" id="mackey_decimal">.</button>
                     </div>
                 </div>
             </div>
