@@ -37,6 +37,9 @@ a:active {
     padding: 10px;
     container-type: inline-size;
 }
+.form-check-input {
+    float: none !important;
+}
 #history {
     min-height: 35px;
     max-height: 100px;

@@ -21,7 +21,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
     keyboardSwitch.addEventListener("click", function() {
         document.activeElement.blur();
     });
+    var keyboardReset = document.getElementById("keyboardReset");
+    keyboardReset.onclick = function() {resetKeyboard()}
 });
+
+function resetKeyboard() {
+    keys.length = 0;
+    document.getElementById("history").innerHTML = keys.toString();
+    
+    const btns = document.getElementsByTagName('button');
+    for (const btn of btns) {
+        btn.style.backgroundColor = "White";
+    }
+}
 
 const keys = [];
 function addToHistory() {
