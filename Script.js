@@ -10,11 +10,16 @@ function showMacs() {
 function switchKeyboards(checked) {
     checked ? showMacs() : showWindows();
     isMac = checked;
+    keys.length = 0;
+    document.getElementById("history").innerHTML = keys.toString();
 }
 window.addEventListener("DOMContentLoaded", (event) => {
     var keyboardSwitch = document.getElementById("keyboardSwitch");
     keyboardSwitch.addEventListener("change", function() {
         switchKeyboards(this.checked);
+    });
+    keyboardSwitch.addEventListener("click", function() {
+        document.activeElement.blur();
     });
 });
 
