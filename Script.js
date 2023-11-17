@@ -1,4 +1,4 @@
-var isMac = false;
+var isMac = /mac/.test(navigator.userAgentData.platform);
 function showWindows() {
     document.getElementById("keyboardWindows").style.display = "";
     document.getElementById("keyboardMacs").style.display = "none";
@@ -18,6 +18,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     keyboardSwitch.addEventListener("change", function() {
         switchKeyboards(this.checked);
     });
+    if(isMac) {
+        keyboardSwitch.checked = isMac
+        switchKeyboards(isMac);
+    }
     keyboardSwitch.addEventListener("click", function() {
         document.activeElement.blur();
     });
