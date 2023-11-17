@@ -31,7 +31,9 @@ function resetKeyboard() {
     
     const btns = document.getElementsByTagName('button');
     for (const btn of btns) {
-        btn.style.backgroundColor = "White";
+        if(btn.id != "key_fn" && btn.id != "key_eject") {
+            btn.style.backgroundColor = "White";
+        }
     }
 }
 
