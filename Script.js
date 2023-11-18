@@ -52,6 +52,7 @@ function addToHistory() {
         case "AltRight": key = isMac ? "Opt-Right" : "Alt-Right"; break;
         case "Equal": key = isMac ? "Equal" : "="; break;
         case "NumpadEqual": key = isMac ? "Equal-Numpad" : "="; break;
+        case "CapsLock": key = "CapsLock-On"; break;
         default: key = event.key;
     }
     keys.unshift(key);
@@ -118,8 +119,10 @@ document.addEventListener('keydown', function(event) {
         changeColors("mackey_pause", true);
     }
     else if(event.keyCode == 20) {//caps
-        changeColors("key_caps", true);
-        changeColors("mackey_caps", true);
+        document.getElementById("key_caps").style.backgroundColor = "yellow";
+        document.getElementById("key_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+        document.getElementById("mackey_caps").style.backgroundColor = "yellow";
+        document.getElementById("mackey_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
     }
     else if(event.keyCode == 27) {//esc
         changeColors("key_esc", true);
@@ -562,6 +565,8 @@ document.addEventListener('keyup', function(event) {
     else if(event.keyCode == 20) {//caps
         changeColors("key_caps", false);
         changeColors("mackey_caps", false);
+        keys.unshift("CapsLock-Off");
+        document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
     }
     else if(event.keyCode == 27) {//esc
         changeColors("key_esc", false);

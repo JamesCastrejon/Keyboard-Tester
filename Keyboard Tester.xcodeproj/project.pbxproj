@@ -1,0 +1,80 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		D137BC2E2B09097200C3086E /* Keyboard.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Keyboard.html; sourceTree = "<group>"; };
+		D137BC2F2B09097200C3086E /* StyleSheet.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = StyleSheet.css; sourceTree = "<group>"; };
+		D137BC302B09097200C3086E /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		D137BC312B09097200C3086E /* Hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Hangman.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		D137BC232B09090F00C3086E = {
+			isa = PBXGroup;
+			children = (
+				D137BC312B09097200C3086E /* Hangman.html */,
+				D137BC2E2B09097200C3086E /* Keyboard.html */,
+				D137BC302B09097200C3086E /* Script.js */,
+				D137BC2F2B09097200C3086E /* StyleSheet.css */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		D137BC242B09090F00C3086E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = D137BC272B09090F00C3086E /* Build configuration list for PBXProject "Keyboard Tester" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D137BC232B09090F00C3086E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		D137BC282B09090F00C3086E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D137BC292B09090F00C3086E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D137BC272B09090F00C3086E /* Build configuration list for PBXProject "Keyboard Tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D137BC282B09090F00C3086E /* Debug */,
+				D137BC292B09090F00C3086E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D137BC242B09090F00C3086E /* Project object */;
+}
