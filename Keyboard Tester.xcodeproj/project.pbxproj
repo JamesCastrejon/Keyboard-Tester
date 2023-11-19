@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		D137BC2E2B09097200C3086E /* Keyboard.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Keyboard.html; sourceTree = "<group>"; };
+		D137BC2E2B09097200C3086E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D137BC2F2B09097200C3086E /* StyleSheet.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = StyleSheet.css; sourceTree = "<group>"; };
 		D137BC302B09097200C3086E /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
 		D137BC312B09097200C3086E /* Hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Hangman.html; sourceTree = "<group>"; };
+		D196AAE22B097E7600BFFF29 /* Privacy Policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Privacy Policy.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		D137BC232B09090F00C3086E = {
 			isa = PBXGroup;
 			children = (
+				D196AAE22B097E7600BFFF29 /* Privacy Policy.html */,
 				D137BC312B09097200C3086E /* Hangman.html */,
-				D137BC2E2B09097200C3086E /* Keyboard.html */,
+				D137BC2E2B09097200C3086E /* index.html */,
 				D137BC302B09097200C3086E /* Script.js */,
 				D137BC2F2B09097200C3086E /* StyleSheet.css */,
 			);

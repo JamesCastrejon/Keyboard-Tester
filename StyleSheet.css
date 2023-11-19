@@ -1,8 +1,10 @@
 html {
     font-size: max(0.83vw, 10px);
-    height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
+    overscroll-behavior-y: none;
     background: linear-gradient(270deg, #00FA9A, #1e90ff, #ee82ee, #FF4500);
     background-size: 600% 600%;
 
@@ -61,6 +63,7 @@ a:active {
     box-shadow: 0px 0px 10px #474343;
     border-radius: 15px;
     border-color: gray;
+    margin-bottom: 15px;
     padding: 10px;
     container-type: inline-size;
 }
@@ -177,11 +180,14 @@ button.three {
     padding: 10px 10px 1px 10px;
 }
 #footer {
+    position: absolute;
+    bottom: 0;
     box-shadow: 0px 0px 10px #474343;
     width: 100%;
     height: auto;
     background: rgba(255, 255, 255, .4);
     backdrop-filter: blur(10px);
     margin-top: 15px;
+    margin-bottom: -5px;
     padding: 10px;
 }
