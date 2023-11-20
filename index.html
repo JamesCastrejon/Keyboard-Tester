@@ -10,7 +10,7 @@
         <meta chartset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-adsense-account" content="ca-pub-7067946833012801">
-        <link rel="styles" href="StyleSheet.css">
+        <link rel="StyleSheet" href="styles.css">
         <script src="scripts.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
 </html>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <div class="container-fluid" id="navbar">
         <div class="row d-flex align-items-center text-center">
             <div class="col-md-2">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="d-none d-sm-block" id="keyboard">
+        <div class="d-none d-sm-block glass" id="keyboard">
             <div class="row d-flex align-items-center text-center">
                 <div class="col-md-4"></div>
                 <div class="form-check form-switch col-md-2">
@@ -383,12 +383,15 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
-    <footer class="container-fluid fixed-bottom" id="footer">
+    <footer class="container-fluid mt-auto" id="footer">
         <div class="row">
             <div class="col-md-2">
                 <a href="">Keyboard Tester</a>
             </div>
-            <div class="col-md-8"></div>
+            <div class="col-md-2">
+                <a href="privacy-policy">Privacy Policy</a>
+            </div>
+            <div class="col-md-6"></div>
             <div class="col-md-2">
                 <p>&#169 2023 James Castrejon</p>
             </div>
