@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		B9CF142F2B0BD102000F4680 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		B9CF14312B0BF94B000F4680 /* About Us.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "About Us.html"; sourceTree = "<group>"; };
+		B9CF14322B0C064B000F4680 /* terms and conditions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "terms and conditions.html"; sourceTree = "<group>"; };
 		D137BC2E2B09097200C3086E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D137BC2F2B09097200C3086E /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		D137BC302B09097200C3086E /* scripts.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scripts.js; sourceTree = "<group>"; };
@@ -18,6 +21,9 @@
 		D137BC232B09090F00C3086E = {
 			isa = PBXGroup;
 			children = (
+				B9CF142F2B0BD102000F4680 /* images */,
+				B9CF14322B0C064B000F4680 /* terms and conditions.html */,
+				B9CF14312B0BF94B000F4680 /* About Us.html */,
 				D196AAE22B097E7600BFFF29 /* Privacy Policy.html */,
 				D137BC312B09097200C3086E /* Hangman.html */,
 				D137BC2E2B09097200C3086E /* index.html */,
