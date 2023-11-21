@@ -1,0 +1,6 @@
+# keyboard-tester.net.com/robots.txt
+# Tell Google not to crawl any URLs in the privacy and terms or images in the images folder,
+# because they won't be useful in Google Search results.
+User-agent: *
+Disallow: /images/
+Disallow: /pages/
