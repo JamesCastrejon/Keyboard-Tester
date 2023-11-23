@@ -76,6 +76,7 @@ function addToHistory() {
 }
 
 function changeColors(id, keyDown) {
+    event.preventDefault()
     switch(keyDown) {
         case true:
             document.getElementById(id).style.backgroundColor = "Gold";
