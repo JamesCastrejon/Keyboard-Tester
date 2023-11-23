@@ -7,38 +7,22 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		B9CF142F2B0BD102000F4680 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
-		B9CF14312B0BF94B000F4680 /* about-us.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "about-us.html"; sourceTree = "<group>"; };
-		B9CF14322B0C064B000F4680 /* terms and conditions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "terms and conditions.html"; sourceTree = "<group>"; };
-		B9CF14332B0C13BF000F4680 /* robots.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = robots.txt; sourceTree = "<group>"; };
-		B9CF14372B0C1A9C000F4680 /* hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hangman.html; sourceTree = "<group>"; };
 		D137BC2E2B09097200C3086E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D137BC2F2B09097200C3086E /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
-		D137BC302B09097200C3086E /* scripts.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scripts.js; sourceTree = "<group>"; };
-		D196AAE22B097E7600BFFF29 /* privacy-policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "privacy-policy.html"; sourceTree = "<group>"; };
+		D137BC2F2B09097200C3086E /* StyleSheet.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = StyleSheet.css; sourceTree = "<group>"; };
+		D137BC302B09097200C3086E /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		D137BC312B09097200C3086E /* Hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Hangman.html; sourceTree = "<group>"; };
+		D196AAE22B097E7600BFFF29 /* Privacy Policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Privacy Policy.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		B9CF14342B0C1548000F4680 /* pages */ = {
-			isa = PBXGroup;
-			children = (
-				B9CF14322B0C064B000F4680 /* terms and conditions.html */,
-				B9CF14312B0BF94B000F4680 /* about-us.html */,
-				D196AAE22B097E7600BFFF29 /* privacy-policy.html */,
-			);
-			path = pages;
-			sourceTree = "<group>";
-		};
 		D137BC232B09090F00C3086E = {
 			isa = PBXGroup;
 			children = (
-				B9CF14342B0C1548000F4680 /* pages */,
-				B9CF142F2B0BD102000F4680 /* images */,
+				D196AAE22B097E7600BFFF29 /* Privacy Policy.html */,
+				D137BC312B09097200C3086E /* Hangman.html */,
 				D137BC2E2B09097200C3086E /* index.html */,
-				B9CF14372B0C1A9C000F4680 /* hangman.html */,
-				D137BC302B09097200C3086E /* scripts.js */,
-				D137BC2F2B09097200C3086E /* styles.css */,
-				B9CF14332B0C13BF000F4680 /* robots.txt */,
+				D137BC302B09097200C3086E /* Script.js */,
+				D137BC2F2B09097200C3086E /* StyleSheet.css */,
 			);
 			sourceTree = "<group>";
 		};
