@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		D176B79A2B127FD500176D3C /* pages.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = pages.js; sourceTree = "<group>"; };
 		D1C1E68F2B0F02D500221031 /* hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hangman.html; sourceTree = "<group>"; };
 		D1C1E6902B0F02D500221031 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D1C1E6922B0F02D500221031 /* privacy-policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "privacy-policy.html"; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 				D1C1E6922B0F02D500221031 /* privacy-policy.html */,
 				D1C1E6932B0F02D500221031 /* terms and conditions.html */,
 				D1C1E6942B0F02D500221031 /* about-us.html */,
+				D176B79A2B127FD500176D3C /* pages.js */,
 			);
 			path = pages;
 			sourceTree = "<group>";

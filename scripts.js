@@ -1,3 +1,30 @@
+function setCookie(name, value) {
+    document.cookie = name + "=" + (value || "") + ";";
+}
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "none";
+}
+function switchBackground(checked) {
+    if(checked) {
+        document.body.style.background = "linear-gradient(270deg, #696969, #A9A9A9, #808080)";
+    } else {
+        document.body.style.background = "linear-gradient(270deg, #00FA9A, #1e90ff, #ee82ee, #FF4500)";
+    }
+    document.body.style.backgroundSize = "600% 600%";
+    setCookie("darkmode", checked);
+}
+
 var isMac = /mac/.test(navigator.userAgentData.platform);
 function showWindows() {
     document.getElementById("keyboardWindows").style.display = "";
@@ -13,11 +40,21 @@ function switchKeyboards(checked) {
     keys.length = 0;
     document.getElementById("history").innerHTML = keys.toString();
 }
+
 window.addEventListener("DOMContentLoaded", (event) => {
+    var backgroundSwitch = document.getElementById("backgroundSwitch");
+    backgroundSwitch.addEventListener("change", function() {
+        switchBackground(this.checked);
+    });
     var keyboardSwitch = document.getElementById("keyboardSwitch");
     keyboardSwitch.addEventListener("change", function() {
         switchKeyboards(this.checked);
     });
+    let darkMode = getCookie("darkmode");
+    if(darkMode != "none") {
+        switchBackground(darkMode);
+        backgroundSwitch.checked = darkMode;
+    }
     if(isMac) {
         keyboardSwitch.checked = isMac
         switchKeyboards(isMac);
@@ -287,107 +324,107 @@ document.addEventListener('keydown', function(event) {
                 changeColors("mackey_#9", true);
             }
             break;
-        case "A", "a":
+        case "A": case "a":
             changeColors("key_a", true);
             changeColors("mackey_a", true);
             break;
-        case "B", "b":
+        case "B": case "b":
             changeColors("key_b", true);
             changeColors("mackey_b", true);
             break;
-        case "C", "c":
+        case "C": case "c":
             changeColors("key_c", true);
             changeColors("mackey_c", true);
             break;
-        case "D", "d":
+        case "D": case "d":
             changeColors("key_d", true);
             changeColors("mackey_d", true);
             break;
-        case "E", "e":
+        case "E": case "e":
             changeColors("key_e", true);
             changeColors("mackey_e", true);
             break;
-        case "F", "f":
+        case "F": case "f":
             changeColors("key_f", true);
             changeColors("mackey_f", true);
             break;
-        case "G", "g":
+        case "G": case "g":
             changeColors("key_g", true);
             changeColors("mackey_g", true);
             break;
-        case "H", "h":
+        case "H": case "h":
             changeColors("key_h", true);
             changeColors("mackey_h", true);
             break;
-        case "I", "i":
+        case "I": case "i":
             changeColors("key_i", true);
             changeColors("mackey_i", true);
             break;
-        case "J", "j":
+        case "J": case "j":
             changeColors("key_j", true);
             changeColors("mackey_j", true);
             break;
-        case "K", "k":
+        case "K": case "k":
             changeColors("key_k", true);
             changeColors("mackey_k", true);
             break;
-        case "L", "l":
+        case "L": case "l":
             changeColors("key_l", true);
             changeColors("mackey_l", true);
             break;
-        case "M", "m":
+        case "M": case "m":
             changeColors("key_m", true);
             changeColors("mackey_m", true);
             break;
-        case "N", "n":
+        case "N": case "n":
             changeColors("key_n", true);
             changeColors("mackey_n", true);
             break;
-        case "O", "o":
+        case "O": case "o":
             changeColors("key_o", true);
             changeColors("mackey_o", true);
             break;
-        case "P", "p":
+        case "P": case "p":
             changeColors("key_p", true);
             changeColors("mackey_p", true);
             break;
-        case "Q", "q":
+        case "Q": case "q":
             changeColors("key_q", true);
             changeColors("mackey_q", true);
             break;
-        case "R", "r":
+        case "R": case "r":
             changeColors("key_r", true);
             changeColors("mackey_r", true);
             break;
-        case "S", "s":
+        case "S": case "s":
             changeColors("key_s", true);
             changeColors("mackey_s", true);
             break;
-        case "T", "t":
+        case "T": case "t":
             changeColors("key_t", true);
             changeColors("mackey_t", true);
             break;
-        case "U", "u":
+        case "U": case "u":
             changeColors("key_u", true);
             changeColors("mackey_u", true);
             break;
-        case "V", "v":
+        case "V": case "v":
             changeColors("key_v", true);
             changeColors("mackey_v", true);
             break;
-        case "W", "w":
+        case "W": case "w":
             changeColors("key_w", true);
             changeColors("mackey_w", true);
             break;
-        case "X", "x":
+        case "X": case "x":
             changeColors("key_x", true);
             changeColors("mackey_x", true);
             break;
-        case "Y", "y":
+        case "Y": case "y":
             changeColors("key_y", true);
             changeColors("mackey_y", true);
             break;
-        case "Z", "z":
+        case "Z": case "z":
             changeColors("key_z", true);
             changeColors("mackey_z", true);
             break;
@@ -755,107 +792,107 @@ document.addEventListener('keyup', function(event) {
                 changeColors("mackey_#9", false);
             }
             break;
-        case "A", "a":
+        case "A": case "a":
             changeColors("key_a", false);
             changeColors("mackey_a", false);
             break;
-        case "B", "b":
+        case "B": case "b":
             changeColors("key_b", false);
             changeColors("mackey_b", false);
             break;
-        case "C", "c":
+        case "C": case "c":
             changeColors("key_c", false);
             changeColors("mackey_c", false);
             break;
-        case "D", "d":
+        case "D": case "d":
             changeColors("key_d", false);
             changeColors("mackey_d", false);
             break;
-        case "E", "e":
+        case "E": case "e":
             changeColors("key_e", false);
             changeColors("mackey_e", false);
             break;
-        case "F", "f":
+        case "F": case "f":
             changeColors("key_f", false);
             changeColors("mackey_f", false);
             break;
-        case "G", "g":
+        case "G": case "g":
             changeColors("key_g", false);
             changeColors("mackey_g", false);
             break;
-        case "H", "h":
+        case "H": case "h":
             changeColors("key_h", false);
             changeColors("mackey_h", false);
             break;
-        case "I", "i":
+        case "I": case "i":
             changeColors("key_i", false);
             changeColors("mackey_i", false);
             break;
-        case "J", "j":
+        case "J": case "j":
             changeColors("key_j", false);
             changeColors("mackey_j", false);
             break;
-        case "K", "k":
+        case "K": case "k":
             changeColors("key_k", false);
             changeColors("mackey_k", false);
             break;
-        case "L", "l":
+        case "L": case "l":
             changeColors("key_l", false);
             changeColors("mackey_l", false);
             break;
-        case "M", "m":
+        case "M": case "m":
             changeColors("key_m", false);
             changeColors("mackey_m", false);
             break;
-        case "N", "n":
+        case "N": case "n":
             changeColors("key_n", false);
             changeColors("mackey_n", false);
             break;
-        case "O", "o":
+        case "O": case "o":
             changeColors("key_o", false);
             changeColors("mackey_o", false);
             break;
-        case "P", "p":
+        case "P": case "p":
             changeColors("key_p", false);
             changeColors("mackey_p", false);
             break;
-        case "Q", "q":
+        case "Q": case "q":
             changeColors("key_q", false);
             changeColors("mackey_q", false);
             break;
-        case "R", "r":
+        case "R": case "r":
             changeColors("key_r", false);
             changeColors("mackey_r", false);
             break;
-        case "S", "s":
+        case "S": case "s":
             changeColors("key_s", false);
             changeColors("mackey_s", false);
             break;
-        case "T", "t":
+        case "T": case "t":
             changeColors("key_t", false);
             changeColors("mackey_t", false);
             break;
-        case "U", "u":
+        case "U": case "u":
             changeColors("key_u", false);
             changeColors("mackey_u", false);
             break;
-        case "V", "v":
+        case "V": case "v":
             changeColors("key_v", false);
             changeColors("mackey_v", false);
             break;
-        case "W", "w":
+        case "W": case "w":
             changeColors("key_w", false);
             changeColors("mackey_w", false);
             break;
-        case "X", "x":
+        case "X": case "x":
             changeColors("key_x", false);
             changeColors("mackey_x", false);
             break;
-        case "Y", "y":
+        case "Y": case "y":
             changeColors("key_y", false);
             changeColors("mackey_y", false);
             break;
-        case "Z", "z":
+        case "Z": case "z":
             changeColors("key_z", false);
             changeColors("mackey_z", false);
             break;
