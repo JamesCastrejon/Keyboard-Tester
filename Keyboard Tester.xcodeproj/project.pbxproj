@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		B9CF14392B14F9E9000F4680 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		D176B79A2B127FD500176D3C /* pages.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = pages.js; sourceTree = "<group>"; };
 		D1C1E68F2B0F02D500221031 /* hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hangman.html; sourceTree = "<group>"; };
 		D1C1E6902B0F02D500221031 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 				D1C1E6982B0F02D500221031 /* styles.css */,
 				D1C1E6962B0F02D500221031 /* scripts.js */,
 				D1C1E6952B0F02D500221031 /* robots.txt */,
+				B9CF14392B14F9E9000F4680 /* favicon.ico */,
 			);
 			sourceTree = "<group>";
 		};
