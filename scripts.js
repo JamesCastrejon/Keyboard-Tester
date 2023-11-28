@@ -222,10 +222,6 @@ document.addEventListener('keydown', function(event) {
             changeColors("key_down", true);
             changeColors("mackey_down", true);
             break;
-        case "PrintScreen":
-            changeColors("key_print", true);
-            changeColors("mackey_print", true);
-            break;
         case "Insert":
             changeColors("key_insert", true);
             changeColors("mackey_insert", true);
@@ -692,7 +688,8 @@ document.addEventListener('keyup', function(event) {
             break;
         case "PrintScreen":
             changeColors("key_print", false);
-            changeColors("mackey_print", false);
+            keys.unshift("PrintScreen");
+            document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
             break;
         case "Insert":
             changeColors("key_insert", false);
