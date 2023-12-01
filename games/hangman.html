@@ -37,7 +37,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h2><strong>Hangman</strong></h2>
-                <p>Press the keys on your keyboard to guess a letter!</p>
+                <p>Press the keys on your keyboard or click on the buttons to guess a letter!</p>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -45,7 +45,7 @@
     <div class="container">
         <div class="d-sm-block glass" id="board">
             <div class="row d-flex align-items-center text-center">
-                <h2 id="hangmanStatus"></h2>
+                <h2 id="hangmanStatus">---</h2>
             </div>
             <div class="row d-flex align-items-center text-center">
                 <div class="col-md-4"></div>
@@ -60,14 +60,15 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-xs-5 col-sm-5">
-                    <div class="list-inline">
-                        <!--TODO: Images-->
+                    <div class="list-block">
+                        <img id="hangmanImage" src="../images/stickman-6.png" alt="gallows" style="width:100px;height:250px;" class="mx-auto d-block">
                     </div>
                     <div class="list-inline">
                         <p class="lead text-center" id="word">hangman</p>
                     </div>
                 </div>
                 <div class="col-xs-7 col-lg-5">
+                    <div class="list-inline"></div>
                     <div class="list-inline">
                         <button class="hangman" id="key_q">q</button>
                         <button class="hangman" id="key_w">w</button>

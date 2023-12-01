@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		B9003BF62B1A8F8600762AF5 /* stickman-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-6.png"; sourceTree = "<group>"; };
+		B9003BF72B1A8F8600762AF5 /* stickman-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-4.png"; sourceTree = "<group>"; };
+		B9003BF82B1A8F8600762AF5 /* stickman-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-0.png"; sourceTree = "<group>"; };
+		B9003BF92B1A8F8600762AF5 /* stickman-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-3.png"; sourceTree = "<group>"; };
+		B9003BFA2B1A8F8600762AF5 /* stickman-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-1.png"; sourceTree = "<group>"; };
+		B9003BFB2B1A8F8600762AF5 /* stickman-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-2.png"; sourceTree = "<group>"; };
+		B9003BFC2B1A8F8600762AF5 /* stickman-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickman-5.png"; sourceTree = "<group>"; };
 		B9CF14392B14F9E9000F4680 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		B9CF143D2B17EE56000F4680 /* games.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = games.js; sourceTree = "<group>"; };
 		B9CF143E2B18DC4D000F4680 /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
@@ -60,6 +67,13 @@
 		D1C1E6972B0F02D500221031 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B9003BF82B1A8F8600762AF5 /* stickman-0.png */,
+				B9003BFA2B1A8F8600762AF5 /* stickman-1.png */,
+				B9003BFB2B1A8F8600762AF5 /* stickman-2.png */,
+				B9003BF92B1A8F8600762AF5 /* stickman-3.png */,
+				B9003BF72B1A8F8600762AF5 /* stickman-4.png */,
+				B9003BFC2B1A8F8600762AF5 /* stickman-5.png */,
+				B9003BF62B1A8F8600762AF5 /* stickman-6.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
