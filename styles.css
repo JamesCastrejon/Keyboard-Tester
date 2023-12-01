@@ -198,6 +198,9 @@ button.three {
     margin-bottom: 15px;
     padding: 10px;
 }
+#word {
+    font-size: 30px;
+}
 button.hangman {
     width: 9.23%;
     border-radius: 15%;
