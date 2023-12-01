@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		B9CF14392B14F9E9000F4680 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		B9CF143D2B17EE56000F4680 /* games.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = games.js; sourceTree = "<group>"; };
+		B9CF143E2B18DC4D000F4680 /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		D176B79A2B127FD500176D3C /* pages.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = pages.js; sourceTree = "<group>"; };
 		D1C1E68F2B0F02D500221031 /* hangman.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hangman.html; sourceTree = "<group>"; };
 		D1C1E6902B0F02D500221031 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -20,12 +22,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		B9CF143C2B16A74F000F4680 /* games */ = {
+			isa = PBXGroup;
+			children = (
+				B9CF143E2B18DC4D000F4680 /* words.txt */,
+				D1C1E68F2B0F02D500221031 /* hangman.html */,
+				B9CF143D2B17EE56000F4680 /* games.js */,
+			);
+			path = games;
+			sourceTree = "<group>";
+		};
 		D137BC232B09090F00C3086E = {
 			isa = PBXGroup;
 			children = (
 				D1C1E6972B0F02D500221031 /* images */,
 				D1C1E6912B0F02D500221031 /* pages */,
-				D1C1E68F2B0F02D500221031 /* hangman.html */,
+				B9CF143C2B16A74F000F4680 /* games */,
 				D1C1E6902B0F02D500221031 /* index.html */,
 				D1C1E6982B0F02D500221031 /* styles.css */,
 				D1C1E6962B0F02D500221031 /* scripts.js */,

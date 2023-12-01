@@ -1,0 +1,130 @@
+<!--TODO: Alphabet keyboard?-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hangman</title>
+        <meta chartset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A simple tool to test your keyboard!">
+        <meta name="google-site-verification" content="TdY2xIWLD7LB3r5TxRwx74ANbnatNDkgmiftkBcRSWg" />
+        <meta name="google-adsense-account" content="ca-pub-7067946833012801">
+        <link rel="stylesheet"  href="../styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script src="games.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+</html>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container-fluid" id="navbar">
+        <div class="row d-flex align-items-center text-center">
+            <div class="col-md-2">
+                <a href="https://keyboard-tester.net/"><h2>Keyboard Tester</h2></a>
+            </div>
+            <div class="col-md-7"></div>
+            <div class="col-md-1">
+                <a href="https://keyboard-tester.net/"><h5>Test Keyboard</h5></a>
+            </div>
+            <div class="col-md-1">
+                <a href="/games/hangman.html"><h5>Hangman</h5></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-sm-block">
+        <div class="row d-flex align-items-center text-center">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h2><strong>Hangman</strong></h2>
+                <p>Press the keys on your keyboard to guess a letter!</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-sm-block glass" id="board">
+            <div class="row d-flex align-items-center text-center">
+                <div class="col-md-4"></div>
+                <div class="form-check form-switch col-md-2">
+                    <input class="form-check-input" id="backgroundSwitch" type="checkbox" role="switch">
+                    <label class="form-check-label" for="backgroundSwitch" type="button"><p><strong>Dark Mode</strong></p></label>
+                </div>
+                <div class="col-md-2">
+                    <div id="wordNext" type="button"><p><Strong>Next Word</strong></p></div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xs-5 col-sm-5">
+                    <div class="list-inline">
+                        
+                    </div>
+                    <div class="list-inline">
+                        <p class="lead text-center" id="word">hangman</p>
+                    </div>
+                </div>
+                <div class="col-xs-7 col-lg-5">
+                    <div class="list-inline">
+                        <button class="hangman" id="key_q">q</button>
+                        <button class="hangman" id="key_w">w</button>
+                        <button class="hangman" id="key_e">e</button>
+                        <button class="hangman" id="key_r">r</button>
+                        <button class="hangman" id="key_t">t</button>
+                        <button class="hangman" id="key_y">y</button>
+                        <button class="hangman" id="key_u">u</button>
+                        <button class="hangman" id="key_i">i</button>
+                        <button class="hangman" id="key_o">o</button>
+                        <button class="hangman" id="key_p">p</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="empty-hangman">-</button>
+                        <button class="hangman" id="key_a">a</button>
+                        <button class="hangman" id="key_s">s</button>
+                        <button class="hangman" id="key_d">d</button>
+                        <button class="hangman" id="key_f">f</button>
+                        <button class="hangman" id="key_g">g</button>
+                        <button class="hangman" id="key_h">h</button>
+                        <button class="hangman" id="key_j">j</button>
+                        <button class="hangman" id="key_k">k</button>
+                        <button class="hangman" id="key_l">l</button>
+                    </div>
+                    <div class="list-inline">
+                        <button class="empty-hangman">-</button>
+                        <button class="empty-hangman">-</button>
+                        <button class="empty-hangman">-</button>
+                        <button class="hangman" id="key_z">z</button>
+                        <button class="hangman" id="key_x">x</button>
+                        <button class="hangman" id="key_c">c</button>
+                        <button class="hangman" id="key_v">v</button>
+                        <button class="hangman" id="key_b">b</button>
+                        <button class="hangman" id="key_n">n</button>
+                        <button class="hangman" id="key_m">m</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid mt-auto" id="footer">
+        <div class="row  d-flex align-items-center text-center">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-1">
+                <a href="https://keyboard-tester.net/">Keyboard Tester</a>
+            </div>
+            <div class="col-md-2">
+                <a>&#169 2023 James Castrejon</a>
+            </div>
+            <div class="col-md-1">
+                <a href="/pages/about-us.html">About Us</a>
+            </div>
+            <div class="col-md-1">
+                <a href="/pages/privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/pages/terms-and-conditions.html">Terms & Conditions</a>
+            </div>
+            <div class="col-md-2">
+        </div>
+    </footer>
+</body>
