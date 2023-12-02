@@ -130,6 +130,18 @@ function checkButtons(key, keyDown) {
         case "Z": case "z":
             changeColors("key_z", keyDown);
             break;
+        case " ":
+            event.preventDefault()
+            let space = document.getElementById("key_space");
+            if(keyDown) {
+                space.style.backgroundColor = "Gold";
+                space.style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+            } else {
+                nextWord();
+                space.style.backgroundColor = "White";
+                space.style.boxShadow = "0px 0px 5px #474343";
+            }
+            break;
         default: break;
     }
 }
