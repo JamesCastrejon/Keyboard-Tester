@@ -1,5 +1,4 @@
 <!--TODO: Custom 404 page
-    TODO: Hangman
     TODO: Accessability Toggle (Color Blind Mode, Hearing Impaired)-->
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid d-none d-sm-block">
+    <div id="intro" class="container-fluid d-none d-sm-block">
         <div class="row d-flex align-items-center text-center">
             <div class="col-md-1"></div>
             <div class="col-md-10">
@@ -382,6 +381,35 @@
     <div>
         <div class="d-block d-sm-none glass" id="keyboardNotice">
             <p class="text-center">Virtual keyboard is hidden on small screens. Keyboard Tester is meant to test physical keyboards. On screen keyboards cannot affect the virtual buttons on this site.</p>
+        </div>
+    </div>
+    <div id="context" class="container-fluid d-none d-sm-block">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <h2><strong>What it is</strong></h2>
+                <p>Keyboard tester is one of the simplest keyboard testers to use online. Simply press a key on the keyboard and watch our keyboard light up!</p>
+                <p>Key functionality includes:</p>
+                <ul>
+                    <li>History: to see what's been typed.</li>
+                    <li>Dark Mode: to have it easier on the eyes.</li>
+                    <li>Keyboard toggle: to switch between mac or windows keyboard.</li>
+                    <li>Reset Keyboard: to test the keyboard as many times one can ever hope for.</li>
+                    <li>Auto Keyboard: this tool will automatically detect what OS is being used when the page loads.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2><strong>How to use it</strong></h2>
+                <p>Pressing down on a key will change the key in our virtual keyboard gold. Pressing up or letting go will change it to green to show it's been pressed. Even if it's green, pressing down on the key again will change it back to gold. If a key doesn't light up, something might be wrong with that key.</p>
+                <p>Some exceptions and notes include:</p>
+                <ul>
+                    <li>FN or FN Lock: the computer system grabs this input preventing the browser from knowing it's been pressed.</li>
+                    <li>Eject (MAC): this input is not detected by the browser.</li>
+                    <li>Print Screen (Windows): this key is only detected when the key is pressed up or let go. Pressing down won't change this key to gold.</li>
+                    <li>Caps Lock: on MAC, caps turns and stays yellow to signify it's on. On Windows, it will turn green immediately after, like the other keys.</li>
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
     <div>

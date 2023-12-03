@@ -24,6 +24,7 @@ function switchBackground(checked) {
     document.body.style.backgroundSize = "600% 600%";
     setCookie("darkmode", checked);
 }
+// TODO: Fix cookies
 
 var isMac = /mac/.test(navigator.userAgentData.platform);
 function showWindows() {

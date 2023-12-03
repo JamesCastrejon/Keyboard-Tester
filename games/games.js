@@ -24,6 +24,7 @@ function switchBackground(checked) {
     document.body.style.backgroundSize = "600% 600%";
     setCookie("darkmode", checked);
 }
+// TODO: Fix cookies
 
 function resetKeyboard() {
     const btns = document.getElementsByTagName('button');

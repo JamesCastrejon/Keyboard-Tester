@@ -205,3 +205,9 @@ button.hangman {
     width: 9.23%;
     border-radius: 15%;
 }
+
+/*MARK: Both*/
+
+#intro, #context {
+    font-size: max(0.9vw, 17px);
+}
