@@ -80,7 +80,7 @@ function resetKeyboard() {
 }
 
 const keys = [];
-function addToHistory() {
+function addToHistory(event) {
     let key = "";
     switch(event.key) {
         case " ": key = "Space"; break;
@@ -127,7 +127,7 @@ function changeColors(id, keyDown) {
     }
 }
 document.addEventListener('keydown', function(event) {
-    addToHistory()
+    addToHistory(event);
     switch(event.key) {
         case "Backspace":
             changeColors("key_back", true);

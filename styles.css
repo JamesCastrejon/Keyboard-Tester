@@ -209,5 +209,5 @@ button.hangman {
 /*MARK: Both*/
 
 #intro, #context {
-    font-size: max(0.9vw, 17px);
+    font-size: max(0.9vw, 15px);
 }
