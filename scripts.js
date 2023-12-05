@@ -26,7 +26,7 @@ function switchBackground(checked) {
 }
 // TODO: Fix cookies
 
-var isMac = /mac/.test(navigator.userAgentData.platform);
+var isMac = (navigator.appVersion.indexOf("Mac") != -1)
 function showWindows() {
     document.getElementById("keyboardWindows").style.display = "";
     document.getElementById("keyboardMacs").style.display = "none";
@@ -40,6 +40,486 @@ function switchKeyboards(checked) {
     isMac = checked;
     keys.length = 0;
     document.getElementById("history").innerHTML = keys.toString();
+}
+
+function checkButtons(event, keyDown) {
+    if (keyDown) {
+        addToHistory(event);
+    }
+    switch(event.key) {
+        case "Backspace":
+            changeColors("key_back", keyDown);
+            changeColors("mackey_back", keyDown);
+            break;
+        case "Tab":
+            changeColors("key_tab", keyDown);
+            changeColors("mackey_tab", keyDown);
+            break;
+        case "Enter":
+            if(event.location == 0) {
+                changeColors("key_enter", keyDown);
+                changeColors("mackey_enter", keyDown);
+            } else {
+                changeColors("key_enter2", keyDown);
+                changeColors("mackey_enter2", keyDown);
+            }
+            break;
+        case "Shift":
+            if(event.location == 1) {
+                changeColors("key_shiftLeft", keyDown);
+                changeColors("mackey_shiftLeft", keyDown);
+            } else {
+                changeColors("key_shiftRight", keyDown);
+                changeColors("mackey_shiftRight", keyDown);
+            }
+            break;
+        case "Control":
+            if(event.location == 1) {
+                changeColors("key_controlLeft", keyDown);
+                changeColors("mackey_controlLeft", keyDown);
+            } else {
+                changeColors("key_controlRight", keyDown);
+                changeColors("mackey_controlRight", keyDown);
+            }
+            break;
+        case "Alt":
+            if(event.location == 1) {
+                changeColors("key_altLeft", keyDown);
+                changeColors("mackey_altLeft", keyDown);
+            } else {
+                changeColors("key_altRight", keyDown);
+                changeColors("mackey_altRight", keyDown);
+            }
+            break;
+        case "Pause":
+            changeColors("key_pause", keyDown);
+            changeColors("mackey_pause", keyDown);
+            break;
+        case "CapsLock":
+            if(keyDown) {
+                document.getElementById("key_caps").style.backgroundColor = "yellow";
+                document.getElementById("key_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+                document.getElementById("mackey_caps").style.backgroundColor = "yellow";
+                document.getElementById("mackey_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
+            } else {
+                changeColors("key_caps", false);
+                changeColors("mackey_caps", false);
+                keys.unshift(isMac ? "CapsLock-Off" : "CapsLock");
+                document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
+            }
+            break;
+        case "Escape":
+            changeColors("key_esc", keyDown);
+            changeColors("mackey_esc", keyDown);
+            break;
+        case " ":
+            changeColors("key_space", keyDown);
+            changeColors("mackey_space", keyDown);
+            break;
+        case "PageUp":
+            changeColors("key_pgup", keyDown);
+            changeColors("mackey_pgup", keyDown);
+            break;
+        case "PageDown":
+            changeColors("key_pgdn", keyDown);
+            changeColors("mackey_pgdn", keyDown);
+            break;
+        case "End":
+            changeColors("key_end", keyDown);
+            changeColors("mackey_end", keyDown);
+            break;
+        case "Home":
+            changeColors("key_home", keyDown);
+            changeColors("mackey_home", keyDown);
+            break;
+        case "ArrowLeft":
+            changeColors("key_left", keyDown);
+            changeColors("mackey_left", keyDown);
+            break;
+        case "ArrowUp":
+            changeColors("key_up", keyDown);
+            changeColors("mackey_up", keyDown);
+            break;
+        case "ArrowRight":
+            changeColors("key_right", keyDown);
+            changeColors("mackey_right", keyDown);
+            break;
+        case "ArrowDown":
+            changeColors("key_down", keyDown);
+            changeColors("mackey_down", keyDown);
+            break;
+        case "PrintScreen":
+            changeColors("key_print", keyDown);
+            keys.unshift("PrintScreen");
+            document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
+            break;
+        case "Insert":
+            changeColors("key_insert", keyDown);
+            changeColors("mackey_insert", keyDown);
+            break;
+        case "Delete":
+            changeColors("key_delete", keyDown);
+            changeColors("mackey_delete", keyDown);
+            break;
+        case "0":
+            if(event.location == 0) {
+                changeColors("key_0", keyDown);
+                changeColors("mackey_0", keyDown);
+            } else {
+                changeColors("key_#0", keyDown);
+                changeColors("mackey_#0", keyDown);
+            }
+            break;
+        case "1":
+            if(event.location == 0) {
+                changeColors("key_1", keyDown);
+                changeColors("mackey_1", keyDown);
+            } else {
+                changeColors("key_#1", keyDown);
+                changeColors("mackey_#1", keyDown);
+            }
+            break;
+        case "2":
+            if(event.location == 0) {
+                changeColors("key_2", keyDown);
+                changeColors("mackey_2", keyDown);
+            } else {
+                changeColors("key_#2", keyDown);
+                changeColors("mackey_#2", keyDown);
+            }
+            break;
+        case "3":
+            if(event.location == 0) {
+                changeColors("key_3", keyDown);
+                changeColors("mackey_3", keyDown);
+            } else {
+                changeColors("key_#3", keyDown);
+                changeColors("mackey_#3", keyDown);
+            }
+            break;
+        case "4":
+            if(event.location == 0) {
+                changeColors("key_4", keyDown);
+                changeColors("mackey_4", keyDown);
+            } else {
+                changeColors("key_#4", keyDown);
+                changeColors("mackey_#4", keyDown);
+            }
+            break;
+        case "5":
+            if(event.location == 0) {
+                changeColors("key_5", keyDown);
+                changeColors("mackey_5", keyDown);
+            } else {
+                changeColors("key_#5", keyDown);
+                changeColors("mackey_#5", keyDown);
+            }
+            break;
+        case "6":
+            if(event.location == 0) {
+                changeColors("key_6", keyDown);
+                changeColors("mackey_6", keyDown);
+            } else {
+                changeColors("key_#6", keyDown);
+                changeColors("mackey_#6", keyDown);
+            }
+            break;
+        case "7":
+            if(event.location == 0) {
+                changeColors("key_7", keyDown);
+                changeColors("mackey_7", keyDown);
+            } else {
+                changeColors("key_#7", keyDown);
+                changeColors("mackey_#7", keyDown);
+            }
+            break;
+        case "8":
+            if(event.location == 0) {
+                changeColors("key_8", keyDown);
+                changeColors("mackey_8", keyDown);
+            } else {
+                changeColors("key_#8", keyDown);
+                changeColors("mackey_#8", keyDown);
+            }
+            break;
+        case "9":
+            if(event.location == 0) {
+                changeColors("key_9", keyDown);
+                changeColors("mackey_9", keyDown);
+            } else {
+                changeColors("key_#9", keyDown);
+                changeColors("mackey_#9", keyDown);
+            }
+            break;
+        case "A": case "a":
+            changeColors("key_a", keyDown);
+            changeColors("mackey_a", keyDown);
+            break;
+        case "B": case "b":
+            changeColors("key_b", keyDown);
+            changeColors("mackey_b", keyDown);
+            break;
+        case "C": case "c":
+            changeColors("key_c", keyDown);
+            changeColors("mackey_c", keyDown);
+            break;
+        case "D": case "d":
+            changeColors("key_d", keyDown);
+            changeColors("mackey_d", keyDown);
+            break;
+        case "E": case "e":
+            changeColors("key_e", keyDown);
+            changeColors("mackey_e", keyDown);
+            break;
+        case "F": case "f":
+            changeColors("key_f", keyDown);
+            changeColors("mackey_f", keyDown);
+            break;
+        case "G": case "g":
+            changeColors("key_g", keyDown);
+            changeColors("mackey_g", keyDown);
+            break;
+        case "H": case "h":
+            changeColors("key_h", keyDown);
+            changeColors("mackey_h", keyDown);
+            break;
+        case "I": case "i":
+            changeColors("key_i", keyDown);
+            changeColors("mackey_i", keyDown);
+            break;
+        case "J": case "j":
+            changeColors("key_j", keyDown);
+            changeColors("mackey_j", keyDown);
+            break;
+        case "K": case "k":
+            changeColors("key_k", keyDown);
+            changeColors("mackey_k", keyDown);
+            break;
+        case "L": case "l":
+            changeColors("key_l", keyDown);
+            changeColors("mackey_l", keyDown);
+            break;
+        case "M": case "m":
+            changeColors("key_m", keyDown);
+            changeColors("mackey_m", keyDown);
+            break;
+        case "N": case "n":
+            changeColors("key_n", keyDown);
+            changeColors("mackey_n", keyDown);
+            break;
+        case "O": case "o":
+            changeColors("key_o", keyDown);
+            changeColors("mackey_o", keyDown);
+            break;
+        case "P": case "p":
+            changeColors("key_p", keyDown);
+            changeColors("mackey_p", keyDown);
+            break;
+        case "Q": case "q":
+            changeColors("key_q", keyDown);
+            changeColors("mackey_q", keyDown);
+            break;
+        case "R": case "r":
+            changeColors("key_r", keyDown);
+            changeColors("mackey_r", keyDown);
+            break;
+        case "S": case "s":
+            changeColors("key_s", keyDown);
+            changeColors("mackey_s", keyDown);
+            break;
+        case "T": case "t":
+            changeColors("key_t", keyDown);
+            changeColors("mackey_t", keyDown);
+            break;
+        case "U": case "u":
+            changeColors("key_u", keyDown);
+            changeColors("mackey_u", keyDown);
+            break;
+        case "V": case "v":
+            changeColors("key_v", keyDown);
+            changeColors("mackey_v", keyDown);
+            break;
+        case "W": case "w":
+            changeColors("key_w", keyDown);
+            changeColors("mackey_w", keyDown);
+            break;
+        case "X": case "x":
+            changeColors("key_x", keyDown);
+            changeColors("mackey_x", keyDown);
+            break;
+        case "Y": case "y":
+            changeColors("key_y", keyDown);
+            changeColors("mackey_y", keyDown);
+            break;
+        case "Z": case "z":
+            changeColors("key_z", keyDown);
+            changeColors("mackey_z", keyDown);
+            break;
+        case "Meta":
+            if(event.location == 1) {
+                changeColors("key_winLeft", keyDown);
+                changeColors("mackey_winLeft", keyDown);
+            } else {
+                changeColors("key_winRight", keyDown);
+                changeColors("mackey_winRight", keyDown);
+            }
+            break;
+        case "ContextMenu":
+            changeColors("key_menu", keyDown);
+            changeColors("mackey_menu", keyDown);
+            break;
+        case "*":
+            changeColors("key_*", keyDown);
+            changeColors("mackey_*", keyDown);
+            break;
+        case "+":
+            changeColors("key_+", keyDown);
+            changeColors("mackey_+", keyDown);
+            break;
+        case "-":
+            if(event.location == 3) {
+                changeColors("key_minus", keyDown);
+                changeColors("mackey_minus", keyDown);
+            } else {
+                changeColors("key_-", keyDown);
+                changeColors("mackey_-", keyDown);
+            }
+            break;
+        case ".":
+            if(event.location == 3) {
+                changeColors("key_decimal", keyDown);
+                changeColors("mackey_decimal", keyDown);
+            } else {
+                changeColors("key_.", keyDown);
+                changeColors("mackey_.", keyDown);
+            }
+            break;
+        case "/":
+            if(event.location == 3) {
+                changeColors("key_division", keyDown);
+                changeColors("mackey_division", keyDown);
+            } else {
+                changeColors("key_/", keyDown);
+                changeColors("mackey_/", keyDown);
+            }
+            break;
+        case "F1":
+            changeColors("key_f1", keyDown);
+            changeColors("mackey_f1", keyDown);
+            break;
+        case "F2":
+            changeColors("key_f2", keyDown);
+            changeColors("mackey_f2", keyDown);
+            break;
+        case "F3":
+            changeColors("key_f3", keyDown);
+            changeColors("mackey_f3", keyDown);
+            break;
+        case "F4":
+            changeColors("key_f4", keyDown);
+            changeColors("mackey_f4", keyDown);
+            break;
+        case "F5":
+            changeColors("key_f5", keyDown);
+            changeColors("mackey_f5", keyDown);
+            break;
+        case "F6":
+            changeColors("key_f6", keyDown);
+            changeColors("mackey_f6", keyDown);
+            break;
+        case "F7":
+            changeColors("key_f7", keyDown);
+            changeColors("mackey_f7", keyDown);
+            break;
+        case "F8":
+            changeColors("key_f8", keyDown);
+            changeColors("mackey_f8", keyDown);
+            break;
+        case "F9":
+            changeColors("key_f9", keyDown);
+            changeColors("mackey_f9", keyDown);
+            break;
+        case "F10":
+            changeColors("key_f10", keyDown);
+            changeColors("mackey_f10", keyDown);
+            break;
+        case "F11":
+            changeColors("key_f11", keyDown);
+            changeColors("mackey_f11", keyDown);
+            break;
+        case "F12":
+            changeColors("key_f12", keyDown);
+            changeColors("mackey_f12", keyDown);
+            break;
+        case "F13":
+            changeColors("key_f13", keyDown);
+            break;
+        case "F14":
+            changeColors("key_f14", keyDown);
+            break;
+        case "F15":
+            changeColors("key_f15", keyDown);
+            break;
+        case "F16":
+            changeColors("key_f16", keyDown);
+            break;
+        case "F17":
+            changeColors("key_f17", keyDown);
+            break;
+        case "F18":
+            changeColors("key_f18", keyDown);
+            break;
+        case "F19":
+            changeColors("key_f19", keyDown);
+            break;
+        case "Clear":
+            changeColors("key_clr", keyDown);
+            break;
+        case "NumLock":
+            changeColors("key_lck", keyDown);
+            break;
+        case "ScrollLock":
+            changeColors("key_scroll", keyDown);
+            changeColors("mackey_scroll", keyDown);
+            break;
+        case ";":
+            changeColors("key_;", keyDown);
+            changeColors("mackey_;", keyDown);
+            break;
+        case "=":
+            if(event.location == 0) {
+                changeColors("key_=", keyDown);
+                changeColors("mackey_=", keyDown);
+            } else {
+                changeColors("mackey_=2", keyDown);
+            }
+            break;
+        case ",":
+            changeColors("key_,", keyDown);
+            changeColors("mackey_,", keyDown);
+            break;
+        case "`":
+            changeColors("key_~", keyDown);
+            changeColors("mackey_~", keyDown);
+            break;
+        case "[":
+            changeColors("key_[", keyDown);
+            changeColors("mackey_[", keyDown);
+            break;
+        case "\\":
+            changeColors("key_\\", keyDown);
+            changeColors("mackey_\\", keyDown);
+            break;
+        case "]":
+            changeColors("key_]", keyDown);
+            changeColors("mackey_]", keyDown);
+            break;
+        case "'":
+            changeColors("key_'", keyDown);
+            changeColors("mackey_'", keyDown);
+            break;
+        default: break;
+    }
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -65,6 +545,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
     var keyboardReset = document.getElementById("keyboardReset");
     keyboardReset.onclick = function() {resetKeyboard()}
+    
+    document.addEventListener('keydown', function(event) {
+        checkButtons(event, true);
+    });
+    document.addEventListener('keyup', function(event) {
+        checkButtons(event, false);
+    });
 });
 
 function resetKeyboard() {
@@ -126,937 +613,3 @@ function changeColors(id, keyDown) {
             break;
     }
 }
-document.addEventListener('keydown', function(event) {
-    addToHistory(event);
-    switch(event.key) {
-        case "Backspace":
-            changeColors("key_back", true);
-            changeColors("mackey_back", true);
-            break;
-        case "Tab":
-            changeColors("key_tab", true);
-            changeColors("mackey_tab", true);
-            break;
-        case "Enter":
-            if(event.location == 0) {
-                changeColors("key_enter", true);
-                changeColors("mackey_enter", true);
-            } else {
-                changeColors("key_enter2", true);
-                changeColors("mackey_enter2", true);
-            }
-            break;
-        case "Shift":
-            if(event.location == 1) {
-                changeColors("key_shiftLeft", true);
-                changeColors("mackey_shiftLeft", true);
-            } else {
-                changeColors("key_shiftRight", true);
-                changeColors("mackey_shiftRight", true);
-            }
-            break;
-        case "Control":
-            if(event.location == 1) {
-                changeColors("key_controlLeft", true);
-                changeColors("mackey_controlLeft", true);
-            } else {
-                changeColors("key_controlRight", true);
-                changeColors("mackey_controlRight", true);
-            }
-            break;
-        case "Alt":
-            if(event.location == 1) {
-                changeColors("key_altLeft", true);
-                changeColors("mackey_altLeft", true);
-            } else {
-                changeColors("key_altRight", true);
-                changeColors("mackey_altRight", true);
-            }
-            break;
-        case "Pause":
-            changeColors("key_pause", true);
-            changeColors("mackey_pause", true);
-            break;
-        case "CapsLock":
-            document.getElementById("key_caps").style.backgroundColor = "yellow";
-            document.getElementById("key_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
-            document.getElementById("mackey_caps").style.backgroundColor = "yellow";
-            document.getElementById("mackey_caps").style.boxShadow = "0px 0px 5px rgba(0, 0, 0, 0)";
-            break;
-        case "Escape":
-            changeColors("key_esc", true);
-            changeColors("mackey_esc", true);
-            break;
-        case " ":
-            changeColors("key_space", true);
-            changeColors("mackey_space", true);
-            break;
-        case "PageUp":
-            changeColors("key_pgup", true);
-            changeColors("mackey_pgup", true);
-            break;
-        case "PageDown":
-            changeColors("key_pgdn", true);
-            changeColors("mackey_pgdn", true);
-            break;
-        case "End":
-            changeColors("key_end", true);
-            changeColors("mackey_end", true);
-            break;
-        case "Home":
-            changeColors("key_home", true);
-            changeColors("mackey_home", true);
-            break;
-        case "ArrowLeft":
-            changeColors("key_left", true);
-            changeColors("mackey_left", true);
-            break;
-        case "ArrowUp":
-            changeColors("key_up", true);
-            changeColors("mackey_up", true);
-            break;
-        case "ArrowRight":
-            changeColors("key_right", true);
-            changeColors("mackey_right", true);
-            break;
-        case "ArrowDown":
-            changeColors("key_down", true);
-            changeColors("mackey_down", true);
-            break;
-        case "Insert":
-            changeColors("key_insert", true);
-            changeColors("mackey_insert", true);
-            break;
-        case "Delete":
-            changeColors("key_delete", true);
-            changeColors("mackey_delete", true);
-            break;
-        case "0":
-            if(event.location == 0) {
-                changeColors("key_0", true);
-                changeColors("mackey_0", true);
-            } else {
-                changeColors("key_#0", true);
-                changeColors("mackey_#0", true);
-            }
-            break;
-        case "1":
-            if(event.location == 0) {
-                changeColors("key_1", true);
-                changeColors("mackey_1", true);
-            } else {
-                changeColors("key_#1", true);
-                changeColors("mackey_#1", true);
-            }
-            break;
-        case "2":
-            if(event.location == 0) {
-                changeColors("key_2", true);
-                changeColors("mackey_2", true);
-            } else {
-                changeColors("key_#2", true);
-                changeColors("mackey_#2", true);
-            }
-            break;
-        case "3":
-            if(event.location == 0) {
-                changeColors("key_3", true);
-                changeColors("mackey_3", true);
-            } else {
-                changeColors("key_#3", true);
-                changeColors("mackey_#3", true);
-            }
-            break;
-        case "4":
-            if(event.location == 0) {
-                changeColors("key_4", true);
-                changeColors("mackey_4", true);
-            } else {
-                changeColors("key_#4", true);
-                changeColors("mackey_#4", true);
-            }
-            break;
-        case "5":
-            if(event.location == 0) {
-                changeColors("key_5", true);
-                changeColors("mackey_5", true);
-            } else {
-                changeColors("key_#5", true);
-                changeColors("mackey_#5", true);
-            }
-            break;
-        case "6":
-            if(event.location == 0) {
-                changeColors("key_6", true);
-                changeColors("mackey_6", true);
-            } else {
-                changeColors("key_#6", true);
-                changeColors("mackey_#6", true);
-            }
-            break;
-        case "7":
-            if(event.location == 0) {
-                changeColors("key_7", true);
-                changeColors("mackey_7", true);
-            } else {
-                changeColors("key_#7", true);
-                changeColors("mackey_#7", true);
-            }
-            break;
-        case "8":
-            if(event.location == 0) {
-                changeColors("key_8", true);
-                changeColors("mackey_8", true);
-            } else {
-                changeColors("key_#8", true);
-                changeColors("mackey_#8", true);
-            }
-            break;
-        case "9":
-            if(event.location == 0) {
-                changeColors("key_9", true);
-                changeColors("mackey_9", true);
-            } else {
-                changeColors("key_#9", true);
-                changeColors("mackey_#9", true);
-            }
-            break;
-        case "A": case "a":
-            changeColors("key_a", true);
-            changeColors("mackey_a", true);
-            break;
-        case "B": case "b":
-            changeColors("key_b", true);
-            changeColors("mackey_b", true);
-            break;
-        case "C": case "c":
-            changeColors("key_c", true);
-            changeColors("mackey_c", true);
-            break;
-        case "D": case "d":
-            changeColors("key_d", true);
-            changeColors("mackey_d", true);
-            break;
-        case "E": case "e":
-            changeColors("key_e", true);
-            changeColors("mackey_e", true);
-            break;
-        case "F": case "f":
-            changeColors("key_f", true);
-            changeColors("mackey_f", true);
-            break;
-        case "G": case "g":
-            changeColors("key_g", true);
-            changeColors("mackey_g", true);
-            break;
-        case "H": case "h":
-            changeColors("key_h", true);
-            changeColors("mackey_h", true);
-            break;
-        case "I": case "i":
-            changeColors("key_i", true);
-            changeColors("mackey_i", true);
-            break;
-        case "J": case "j":
-            changeColors("key_j", true);
-            changeColors("mackey_j", true);
-            break;
-        case "K": case "k":
-            changeColors("key_k", true);
-            changeColors("mackey_k", true);
-            break;
-        case "L": case "l":
-            changeColors("key_l", true);
-            changeColors("mackey_l", true);
-            break;
-        case "M": case "m":
-            changeColors("key_m", true);
-            changeColors("mackey_m", true);
-            break;
-        case "N": case "n":
-            changeColors("key_n", true);
-            changeColors("mackey_n", true);
-            break;
-        case "O": case "o":
-            changeColors("key_o", true);
-            changeColors("mackey_o", true);
-            break;
-        case "P": case "p":
-            changeColors("key_p", true);
-            changeColors("mackey_p", true);
-            break;
-        case "Q": case "q":
-            changeColors("key_q", true);
-            changeColors("mackey_q", true);
-            break;
-        case "R": case "r":
-            changeColors("key_r", true);
-            changeColors("mackey_r", true);
-            break;
-        case "S": case "s":
-            changeColors("key_s", true);
-            changeColors("mackey_s", true);
-            break;
-        case "T": case "t":
-            changeColors("key_t", true);
-            changeColors("mackey_t", true);
-            break;
-        case "U": case "u":
-            changeColors("key_u", true);
-            changeColors("mackey_u", true);
-            break;
-        case "V": case "v":
-            changeColors("key_v", true);
-            changeColors("mackey_v", true);
-            break;
-        case "W": case "w":
-            changeColors("key_w", true);
-            changeColors("mackey_w", true);
-            break;
-        case "X": case "x":
-            changeColors("key_x", true);
-            changeColors("mackey_x", true);
-            break;
-        case "Y": case "y":
-            changeColors("key_y", true);
-            changeColors("mackey_y", true);
-            break;
-        case "Z": case "z":
-            changeColors("key_z", true);
-            changeColors("mackey_z", true);
-            break;
-        case "Meta":
-            if(event.location == 1) {
-                changeColors("key_winLeft", true);
-                changeColors("mackey_winLeft", true);
-            } else {
-                changeColors("key_winRight", true);
-                changeColors("mackey_winRight", true);
-            }
-            break;
-        case "ContextMenu":
-            changeColors("key_menu", true);
-            changeColors("mackey_menu", true);
-            break;
-        case "*":
-            changeColors("key_*", true);
-            changeColors("mackey_*", true);
-            break;
-        case "+":
-            changeColors("key_+", true);
-            changeColors("mackey_+", true);
-            break;
-        case "-":
-            if(event.location == 3) {
-                changeColors("key_minus", true);
-                changeColors("mackey_minus", true);
-            } else {
-                changeColors("key_-", true);
-                changeColors("mackey_-", true);
-            }
-            break;
-        case ".":
-            if(event.location == 3) {
-                changeColors("key_decimal", true);
-                changeColors("mackey_decimal", true);
-            } else {
-                changeColors("key_.", true);
-                changeColors("mackey_.", true);
-            }
-            break;
-        case "/":
-            if(event.location == 3) {
-                changeColors("key_division", true);
-                changeColors("mackey_division", true);
-            } else {
-                changeColors("key_/", true);
-                changeColors("mackey_/", true);
-            }
-            break;
-        case "F1":
-            changeColors("key_f1", true);
-            changeColors("mackey_f1", true);
-            break;
-        case "F2":
-            changeColors("key_f2", true);
-            changeColors("mackey_f2", true);
-            break;
-        case "F3":
-            changeColors("key_f3", true);
-            changeColors("mackey_f3", true);
-            break;
-        case "F4":
-            changeColors("key_f4", true);
-            changeColors("mackey_f4", true);
-            break;
-        case "F5":
-            changeColors("key_f5", true);
-            changeColors("mackey_f5", true);
-            break;
-        case "F6":
-            changeColors("key_f6", true);
-            changeColors("mackey_f6", true);
-            break;
-        case "F7":
-            changeColors("key_f7", true);
-            changeColors("mackey_f7", true);
-            break;
-        case "F8":
-            changeColors("key_f8", true);
-            changeColors("mackey_f8", true);
-            break;
-        case "F9":
-            changeColors("key_f9", true);
-            changeColors("mackey_f9", true);
-            break;
-        case "F10":
-            changeColors("key_f10", true);
-            changeColors("mackey_f10", true);
-            break;
-        case "F11":
-            changeColors("key_f11", true);
-            changeColors("mackey_f11", true);
-            break;
-        case "F12":
-            changeColors("key_f12", true);
-            changeColors("mackey_f12", true);
-            break;
-        case "F13":
-            changeColors("key_f13", true);
-            break;
-        case "F14":
-            changeColors("key_f14", true);
-            break;
-        case "F15":
-            changeColors("key_f15", true);
-            break;
-        case "F16":
-            changeColors("key_f16", true);
-            break;
-        case "F17":
-            changeColors("key_f17", true);
-            break;
-        case "F18":
-            changeColors("key_f18", true);
-            break;
-        case "F19":
-            changeColors("key_f19", true);
-            break;
-        case "Clear":
-            changeColors("key_clr", true);
-            break;
-        case "NumLock":
-            changeColors("key_lck", true);
-            break;
-        case "ScrollLock":
-            changeColors("key_scroll", true);
-            changeColors("mackey_scroll", true);
-            break;
-        case ";":
-            changeColors("key_;", true);
-            changeColors("mackey_;", true);
-            break;
-        case "=":
-            if(event.location == 0) {
-                changeColors("key_=", true);
-                changeColors("mackey_=", true);
-            } else {
-                changeColors("mackey_=2", true);
-            }
-            break;
-        case ",":
-            changeColors("key_,", true);
-            changeColors("mackey_,", true);
-            break;
-        case "`":
-            changeColors("key_~", true);
-            changeColors("mackey_~", true);
-            break;
-        case "[":
-            changeColors("key_[", true);
-            changeColors("mackey_[", true);
-            break;
-        case "\\":
-            changeColors("key_\\", true);
-            changeColors("mackey_\\", true);
-            break;
-        case "]":
-            changeColors("key_]", true);
-            changeColors("mackey_]", true);
-            break;
-        case "'":
-            changeColors("key_'", true);
-            changeColors("mackey_'", true);
-            break;
-        default: break;
-    }
-});
-document.addEventListener('keyup', function(event) {
-    switch(event.key) {
-        case "Backspace":
-            changeColors("key_back", false);
-            changeColors("mackey_back", false);
-            break;
-        case "Tab":
-            changeColors("key_tab", false);
-            changeColors("mackey_tab", false);
-            break;
-        case "Enter":
-            if(event.location == 0) {
-                changeColors("key_enter", false);
-                changeColors("mackey_enter", false);
-            } else {
-                changeColors("key_enter2", false);
-                changeColors("mackey_enter2", false);
-            }
-            break;
-        case "Shift":
-            if(event.location == 1) {
-                changeColors("key_shiftLeft", false);
-                changeColors("mackey_shiftLeft", false);
-            } else {
-                changeColors("key_shiftRight", false);
-                changeColors("mackey_shiftRight", false);
-            }
-            break;
-        case "Control":
-            if(event.location == 1) {
-                changeColors("key_controlLeft", false);
-                changeColors("mackey_controlLeft", false);
-            } else {
-                changeColors("key_controlRight", false);
-                changeColors("mackey_controlRight", false);
-            }
-            break;
-        case "Alt":
-            if(event.location == 1) {
-                changeColors("key_altLeft", false);
-                changeColors("mackey_altLeft", false);
-            } else {
-                changeColors("key_altRight", false);
-                changeColors("mackey_altRight", false);
-            }
-            break;
-        case "Pause":
-            changeColors("key_pause", false);
-            changeColors("mackey_pause", false);
-            break;
-        case "CapsLock":
-            changeColors("key_caps", false);
-            changeColors("mackey_caps", false);
-            keys.unshift(isMac ? "CapsLock-Off" : "CapsLock");
-            document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
-            break;
-        case "Escape":
-            changeColors("key_esc", false);
-            changeColors("mackey_esc", false);
-            break;
-        case " ":
-            changeColors("key_space", false);
-            changeColors("mackey_space", false);
-            break;
-        case "PageUp":
-            changeColors("key_pgup", false);
-            changeColors("mackey_pgup", false);
-            break;
-        case "PageDown":
-            changeColors("key_pgdn", false);
-            changeColors("mackey_pgdn", false);
-            break;
-        case "End":
-            changeColors("key_end", false);
-            changeColors("mackey_end", false);
-            break;
-        case "Home":
-            changeColors("key_home", false);
-            changeColors("mackey_home", false);
-            break;
-        case "ArrowLeft":
-            changeColors("key_left", false);
-            changeColors("mackey_left", false);
-            break;
-        case "ArrowUp":
-            changeColors("key_up", false);
-            changeColors("mackey_up", false);
-            break;
-        case "ArrowRight":
-            changeColors("key_right", false);
-            changeColors("mackey_right", false);
-            break;
-        case "ArrowDown":
-            changeColors("key_down", false);
-            changeColors("mackey_down", false);
-            break;
-        case "PrintScreen":
-            changeColors("key_print", false);
-            keys.unshift("PrintScreen");
-            document.getElementById("history").innerHTML = keys.toString().replaceAll(",", ", ");
-            break;
-        case "Insert":
-            changeColors("key_insert", false);
-            changeColors("mackey_insert", false);
-            break;
-        case "Delete":
-            changeColors("key_delete", false);
-            changeColors("mackey_delete", false);
-            break;
-        case "0":
-            if(event.location == 0) {
-                changeColors("key_0", false);
-                changeColors("mackey_0", false);
-            } else {
-                changeColors("key_#0", false);
-                changeColors("mackey_#0", false);
-            }
-            break;
-        case "1":
-            if(event.location == 0) {
-                changeColors("key_1", false);
-                changeColors("mackey_1", false);
-            } else {
-                changeColors("key_#1", false);
-                changeColors("mackey_#1", false);
-            }
-            break;
-        case "2":
-            if(event.location == 0) {
-                changeColors("key_2", false);
-                changeColors("mackey_2", false);
-            } else {
-                changeColors("key_#2", false);
-                changeColors("mackey_#2", false);
-            }
-            break;
-        case "3":
-            if(event.location == 0) {
-                changeColors("key_3", false);
-                changeColors("mackey_3", false);
-            } else {
-                changeColors("key_#3", false);
-                changeColors("mackey_#3", false);
-            }
-            break;
-        case "4":
-            if(event.location == 0) {
-                changeColors("key_4", false);
-                changeColors("mackey_4", false);
-            } else {
-                changeColors("key_#4", false);
-                changeColors("mackey_#4", false);
-            }
-            break;
-        case "5":
-            if(event.location == 0) {
-                changeColors("key_5", false);
-                changeColors("mackey_5", false);
-            } else {
-                changeColors("key_#5", false);
-                changeColors("mackey_#5", false);
-            }
-            break;
-        case "6":
-            if(event.location == 0) {
-                changeColors("key_6", false);
-                changeColors("mackey_6", false);
-            } else {
-                changeColors("key_#6", false);
-                changeColors("mackey_#6", false);
-            }
-            break;
-        case "7":
-            if(event.location == 0) {
-                changeColors("key_7", false);
-                changeColors("mackey_7", false);
-            } else {
-                changeColors("key_#7", false);
-                changeColors("mackey_#7", false);
-            }
-            break;
-        case "8":
-            if(event.location == 0) {
-                changeColors("key_8", false);
-                changeColors("mackey_8", false);
-            } else {
-                changeColors("key_#8", false);
-                changeColors("mackey_#8", false);
-            }
-            break;
-        case "9":
-            if(event.location == 0) {
-                changeColors("key_9", false);
-                changeColors("mackey_9", false);
-            } else {
-                changeColors("key_#9", false);
-                changeColors("mackey_#9", false);
-            }
-            break;
-        case "A": case "a":
-            changeColors("key_a", false);
-            changeColors("mackey_a", false);
-            break;
-        case "B": case "b":
-            changeColors("key_b", false);
-            changeColors("mackey_b", false);
-            break;
-        case "C": case "c":
-            changeColors("key_c", false);
-            changeColors("mackey_c", false);
-            break;
-        case "D": case "d":
-            changeColors("key_d", false);
-            changeColors("mackey_d", false);
-            break;
-        case "E": case "e":
-            changeColors("key_e", false);
-            changeColors("mackey_e", false);
-            break;
-        case "F": case "f":
-            changeColors("key_f", false);
-            changeColors("mackey_f", false);
-            break;
-        case "G": case "g":
-            changeColors("key_g", false);
-            changeColors("mackey_g", false);
-            break;
-        case "H": case "h":
-            changeColors("key_h", false);
-            changeColors("mackey_h", false);
-            break;
-        case "I": case "i":
-            changeColors("key_i", false);
-            changeColors("mackey_i", false);
-            break;
-        case "J": case "j":
-            changeColors("key_j", false);
-            changeColors("mackey_j", false);
-            break;
-        case "K": case "k":
-            changeColors("key_k", false);
-            changeColors("mackey_k", false);
-            break;
-        case "L": case "l":
-            changeColors("key_l", false);
-            changeColors("mackey_l", false);
-            break;
-        case "M": case "m":
-            changeColors("key_m", false);
-            changeColors("mackey_m", false);
-            break;
-        case "N": case "n":
-            changeColors("key_n", false);
-            changeColors("mackey_n", false);
-            break;
-        case "O": case "o":
-            changeColors("key_o", false);
-            changeColors("mackey_o", false);
-            break;
-        case "P": case "p":
-            changeColors("key_p", false);
-            changeColors("mackey_p", false);
-            break;
-        case "Q": case "q":
-            changeColors("key_q", false);
-            changeColors("mackey_q", false);
-            break;
-        case "R": case "r":
-            changeColors("key_r", false);
-            changeColors("mackey_r", false);
-            break;
-        case "S": case "s":
-            changeColors("key_s", false);
-            changeColors("mackey_s", false);
-            break;
-        case "T": case "t":
-            changeColors("key_t", false);
-            changeColors("mackey_t", false);
-            break;
-        case "U": case "u":
-            changeColors("key_u", false);
-            changeColors("mackey_u", false);
-            break;
-        case "V": case "v":
-            changeColors("key_v", false);
-            changeColors("mackey_v", false);
-            break;
-        case "W": case "w":
-            changeColors("key_w", false);
-            changeColors("mackey_w", false);
-            break;
-        case "X": case "x":
-            changeColors("key_x", false);
-            changeColors("mackey_x", false);
-            break;
-        case "Y": case "y":
-            changeColors("key_y", false);
-            changeColors("mackey_y", false);
-            break;
-        case "Z": case "z":
-            changeColors("key_z", false);
-            changeColors("mackey_z", false);
-            break;
-        case "Meta":
-            if(event.location == 1) {
-                changeColors("key_winLeft", false);
-                changeColors("mackey_winLeft", false);
-            } else {
-                changeColors("key_winRight", false);
-                changeColors("mackey_winRight", false);
-            }
-            break;
-        case "ContextMenu":
-            changeColors("key_menu", false);
-            changeColors("mackey_menu", false);
-            break;
-        case "*":
-            changeColors("key_*", false);
-            changeColors("mackey_*", false);
-            break;
-        case "+":
-            changeColors("key_+", false);
-            changeColors("mackey_+", false);
-            break;
-        case "-":
-            if(event.location == 3) {
-                changeColors("key_minus", false);
-                changeColors("mackey_minus", false);
-            } else {
-                changeColors("key_-", false);
-                changeColors("mackey_-", false);
-            }
-            break;
-        case ".":
-            if(event.location == 3) {
-                changeColors("key_decimal", false);
-                changeColors("mackey_decimal", false);
-            } else {
-                changeColors("key_.", false);
-                changeColors("mackey_.", false);
-            }
-            break;
-        case "/":
-            if(event.location == 3) {
-                changeColors("key_division", false);
-                changeColors("mackey_division", false);
-            } else {
-                changeColors("key_/", false);
-                changeColors("mackey_/", false);
-            }
-            break;
-        case "F1":
-            changeColors("key_f1", false);
-            changeColors("mackey_f1", false);
-            break;
-        case "F2":
-            changeColors("key_f2", false);
-            changeColors("mackey_f2", false);
-            break;
-        case "F3":
-            changeColors("key_f3", false);
-            changeColors("mackey_f3", false);
-            break;
-        case "F4":
-            changeColors("key_f4", false);
-            changeColors("mackey_f4", false);
-            break;
-        case "F5":
-            changeColors("key_f5", false);
-            changeColors("mackey_f5", false);
-            break;
-        case "F6":
-            changeColors("key_f6", false);
-            changeColors("mackey_f6", false);
-            break;
-        case "F7":
-            changeColors("key_f7", false);
-            changeColors("mackey_f7", false);
-            break;
-        case "F8":
-            changeColors("key_f8", false);
-            changeColors("mackey_f8", false);
-            break;
-        case "F9":
-            changeColors("key_f9", false);
-            changeColors("mackey_f9", false);
-            break;
-        case "F10":
-            changeColors("key_f10", false);
-            changeColors("mackey_f10", false);
-            break;
-        case "F11":
-            changeColors("key_f11", false);
-            changeColors("mackey_f11", false);
-            break;
-        case "F12":
-            changeColors("key_f12", false);
-            changeColors("mackey_f12", false);
-            break;
-        case "F13":
-            changeColors("key_f13", false);
-            break;
-        case "F14":
-            changeColors("key_f14", false);
-            break;
-        case "F15":
-            changeColors("key_f15", false);
-            break;
-        case "F16":
-            changeColors("key_f16", false);
-            break;
-        case "F17":
-            changeColors("key_f17", false);
-            break;
-        case "F18":
-            changeColors("key_f18", false);
-            break;
-        case "F19":
-            changeColors("key_f19", false);
-            break;
-        case "Clear":
-            changeColors("key_clr", false);
-            break;
-        case "NumLock":
-            changeColors("key_lck", false);
-            break;
-        case "ScrollLock":
-            changeColors("key_scroll", false);
-            changeColors("mackey_scroll", false);
-            break;
-        case ";":
-            changeColors("key_;", false);
-            changeColors("mackey_;", false);
-            break;
-        case "=":
-            if(event.location == 0) {
-                changeColors("key_=", false);
-                changeColors("mackey_=", false);
-            } else {
-                changeColors("mackey_=2", false);
-            }
-            break;
-        case ",":
-            changeColors("key_,", false);
-            changeColors("mackey_,", false);
-            break;
-        case "`":
-            changeColors("key_~", false);
-            changeColors("mackey_~", false);
-            break;
-        case "[":
-            changeColors("key_[", false);
-            changeColors("mackey_[", false);
-            break;
-        case "\\":
-            changeColors("key_\\", false);
-            changeColors("mackey_\\", false);
-            break;
-        case "]":
-            changeColors("key_]", false);
-            changeColors("mackey_]", false);
-            break;
-        case "'":
-            changeColors("key_'", false);
-            changeColors("mackey_'", false);
-            break;
-        default: break;
-    }
-});

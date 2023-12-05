@@ -165,7 +165,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const btns = document.getElementsByTagName('button');
     for (const btn of btns) {
         btn.addEventListener('click', function(event) {
-            console.log(event.target.id);
             checkButtons(event.target.id.replace("key_", ""), false);
         });
     }
