@@ -17,14 +17,12 @@ function getCookie(cname) {
 }
 function switchBackground(checked) {
     if(checked) {
-        document.body.style.background = "linear-gradient(270deg, #696969, #A9A9A9, #808080)";
+        document.body.style.background = "linear-gradient(135deg, #A9A9A9, #808080)";
     } else {
-        document.body.style.background = "linear-gradient(270deg, #00FA9A, #1e90ff, #ee82ee, #FF4500)";
+        document.body.style.background = "linear-gradient(135deg, #1e90ff, #ee82ee)";
     }
-    document.body.style.backgroundSize = "600% 600%";
     setCookie("darkmode", checked);
 }
-// TODO: Fix cookies
 
 function resetKeyboard() {
     const btns = document.getElementsByTagName('button');
