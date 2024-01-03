@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="A simple tool to test your keyboard! Or play a game of hangman!">
         <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+        <script type="text/javascript">
+            aclib.runInPagePush({
+                zoneId: '7916082',
+                refreshRate: 30,
+                maxAds: 2,
+            });
+        </script>
         <link rel="stylesheet"  href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <script src="scripts.js"></script>
@@ -18,7 +25,7 @@
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid" id="navbar">
         <div class="row d-flex align-items-center text-center">
-            <div class="col-md-2">
+            <div class="title col-md-2">
                 <a href="/"><h2>Keyboard Tester</h2></a>
             </div>
             <div class="col-md-7"></div>
@@ -475,11 +482,4 @@
             <div class="col-md-2">
         </div>
     </footer>
-    <div>
-        <script type="text/javascript">
-            aclib.runAutoTag({
-                zoneId: 'dlq52xr4ic',
-            });
-        </script>
-    </div>
 </body>
